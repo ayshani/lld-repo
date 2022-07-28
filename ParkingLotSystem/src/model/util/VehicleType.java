@@ -1,4 +1,4 @@
-package model.vehicle;
+package model.util;
 
 public enum VehicleType {
     CAR,

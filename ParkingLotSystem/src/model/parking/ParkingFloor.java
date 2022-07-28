@@ -2,7 +2,8 @@ package model.parking;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.vehicle.VehicleType;
+import model.util.ParkingSpotType;
+import model.util.VehicleType;
 
 import java.util.Deque;
 import java.util.HashMap;

@@ -2,6 +2,7 @@ package model.parking;
 
 import lombok.Getter;
 import lombok.Setter;
+import model.util.ParkingSpotType;
 
 @Getter
 @Setter

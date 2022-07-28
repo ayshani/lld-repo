@@ -1,9 +1,14 @@
 package model.parking;
 
+import lombok.Getter;
+import lombok.Setter;
+import model.util.VehicleType;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
+@Getter
+@Setter
 public class ParkingLot {
 
     private String parkingLotId;
@@ -41,5 +46,32 @@ public class ParkingLot {
                 return false;
         }
         return true;
+    }
+
+    public boolean canPark(VehicleType vehicleType){
+
+        for(ParkingFloor parkingFloor : parkingFloors){
+            if(parkingFloor.canPark(vehicleType))
+                return true;
+        }
+        return false;
+    }
+
+    public ParkingSpot getParkingSpot(VehicleType vehicleType){
+        for(ParkingFloor parkingFloor : parkingFloors){
+            ParkingSpot parkingSpot = parkingFloor.getParkingSpot(vehicleType);
+            if(null != parkingSpot)
+                return parkingSpot;
+        }
+        return null;
+    }
+
+    public ParkingSpot vacateParkingSpot(String parkingSpotId){
+        for(ParkingFloor parkingFloor : parkingFloors){
+            ParkingSpot parkingSpot = parkingFloor.vacateParkingSpot(parkingSpotId);
+            if(null != parkingSpot)
+                return parkingSpot;
+        }
+        return null;
     }
 }
