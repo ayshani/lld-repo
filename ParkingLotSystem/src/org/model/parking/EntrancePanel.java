@@ -2,6 +2,7 @@ package org.model.parking;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.model.exception.ParkingLotFullException;
 import org.model.util.TicketStatus;
 import org.model.vehicle.Vehicle;
 
@@ -16,15 +17,16 @@ public class EntrancePanel {
         this.id = id;
     }
 
-    public ParkingTicket getParkignTicket(Vehicle vehicle){
+    public ParkingTicket getParkingTicket(Vehicle vehicle) throws ParkingLotFullException {
         ParkingLot parkingLot = ParkingLot.getInstance();
         if(!parkingLot.canPark(vehicle.getType()))
-            return null;
-            // throw exception
+            throw new ParkingLotFullException("parking Lot full");
+
         ParkingSpot  parkingSpot = parkingLot.getParkingSpot(vehicle.getType());
         if(null == parkingSpot)
             return null;
-
+        // Assign vehicle to parking spot
+        parkingSpot.assignVechicleToSpot(vehicle.getLicenseNumber());
         return buildTicket(vehicle.getLicenseNumber(),parkingSpot.getParkingSpotId());
     }
 

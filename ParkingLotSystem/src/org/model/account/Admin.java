@@ -7,7 +7,8 @@ import java.util.Optional;
 
 public class Admin extends Account {
 
-    public void adParkingFloor(ParkingFloor parkingFloor) {
+    public void addParkingFloor(ParkingFloor parkingFloor) {
+
         ParkingLot parkingLot = ParkingLot.getInstance();
         Optional<ParkingFloor> floor =
                 parkingLot.getParkingFloors().stream().
@@ -17,6 +18,7 @@ public class Admin extends Account {
         if (floor.isPresent())
             return;
         parkingLot.getParkingFloors().add(parkingFloor);
+        //System.out.println(parkingLot.getParkingFloors().size() +" wufiuwf");
     }
 
     public void addParkingSpot(String parkingFloorId, ParkingSpot parkingSpot) throws InvalidParkingFloorException {
@@ -25,8 +27,9 @@ public class Admin extends Account {
                 .filter(pF -> pF.getFloorId().equalsIgnoreCase(parkingFloorId))
                 .findFirst();
 
-        if (!floor.isPresent())
-            throw new InvalidParkingFloorException();
+        if (!floor.isPresent()) {
+            throw new InvalidParkingFloorException("Invalid Floor");
+        }
 
         Optional<ParkingSpot> spot = floor.get().getParkingSpots().get(parkingSpot.getParkingSpotType())
                 .stream().filter(ps -> ps.getParkingSpotId().equalsIgnoreCase(parkingSpot.getParkingSpotId()))

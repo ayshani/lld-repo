@@ -31,8 +31,9 @@ public class ParkingLot {
     private static ParkingLot parkingLot = null;
 
     public static ParkingLot getInstance() {
-        if(parkingLot==null)
-            return new ParkingLot();
+        if(parkingLot==null) {
+            parkingLot = new ParkingLot();
+        }
         return parkingLot;
     }
 
