@@ -50,30 +50,30 @@ public class ParkingLotApplication {
         ((Admin) adminAccount).addParkingSpot(floorId, carSpot2);
 
         // Test case 1 - check for availability of parking lot - TRUE
-        System.out.println(parkinglot.canPark(VehicleType.CAR));
+        System.out.println("Is CAR vehicle can be parked : "+parkinglot.canPark(VehicleType.CAR));
 
-        // Test case 1 - check for availability of parking lot - FALSE
-        System.out.println(parkinglot.canPark(VehicleType.EV));
+        // Test case 2 - check for availability of parking lot - FALSE
+        System.out.println("Is EV vehicle can be parked : "+parkinglot.canPark(VehicleType.EV));
 
         // Test case 3 - check for availability of parking lot - TRUE
-        System.out.println(parkinglot.canPark(VehicleType.MOTORBIKE));
+        System.out.println("Is MOTORBIKE vehicle can be parked : "+parkinglot.canPark(VehicleType.MOTORBIKE));
 
         // TEST case 4 - Check if full
-        System.out.println(parkinglot.isFull());
+        System.out.println("Is parking lot full : "+parkinglot.isFull());
 
         // Test case 5 - get parking spot
         Vehicle car = new Car("WB670970");
         ParkingTicket parkingTicket = entrancePanel.getParkingTicket(car);
-        System.out.println(parkingTicket.getAllocatedSpotId());
+        System.out.println("Allocated spot for vehicle number "+parkingTicket.getLicensePlateNumber() +" : "+parkingTicket.getAllocatedSpotId());
 
         //((Admin) adminAccount).addParkingSpot(floorId, carSpot);
 
         // Test case 6 - Should be able to get ticket
 
         ParkingTicket tkt = entrancePanel.getParkingTicket(new Car("ka04rb8458"));
-        System.out.println(tkt.getAllocatedSpotId());
+        System.out.println("Allocated spot for vehicle number "+tkt.getLicensePlateNumber() +" : "+tkt.getAllocatedSpotId());
 
-        // Test case - 9 - Should be able to get parking ticket
+        // Test case - 7 - Should be able to get parking ticket
         //Now Car its Full
         //Will NOt be able to parkCar
         //This will throw an Exception as there is no parking spot available
@@ -81,41 +81,42 @@ public class ParkingLotApplication {
 //        ParkingTicket parkingTicket1 = entrancePanel.getParkingTicket(newCar);
 //        System.out.println("newCar "+ parkingTicket1.getAllocatedSpotId());
 
-        // Test case 7 - Should be able to get ticket
+        // Test case 8 - Should be able to get ticket
         ParkingTicket mtrTkt = entrancePanel.getParkingTicket(new MotorBike("ka01ee4901"));
-        System.out.println(mtrTkt.getAllocatedSpotId());
+        System.out.println("Allocated spot for vehicle number "+mtrTkt.getLicensePlateNumber() +" : "+mtrTkt.getAllocatedSpotId());
 
+        // Test case 9 - should be able to vacate parking spot
         mtrTkt = exitPanel.scanAndVacate(mtrTkt);
         System.out.println("Motorbike charge : "+mtrTkt.getCharge());
-        System.out.println(mtrTkt.getCharge()>0);
+        System.out.println("Is motorbike charge more than 0 : "+ (mtrTkt.getCharge()>0));
 
-        // Test case 13 - park on vacated spot
+        // Test case 10 - park on vacated spot
         ParkingTicket mtrTkt1 = entrancePanel.getParkingTicket(new MotorBike("ka01ee7791"));
-        System.out.println(mtrTkt.getAllocatedSpotId());
+        System.out.println("Allocated spot for vehicle number "+mtrTkt1.getLicensePlateNumber() +" : "+mtrTkt1.getAllocatedSpotId());
 
-        // Test case 14 - park when spot is not available
+        // Test case 11 - park when spot is not available
         // Exception as no bike spot is left to park
         //ParkingTicket unavaialbemTkt =
-       //         entrancePanel.getParkingTicket(new MotorBike("ka01ee4455"));
-       // System.out.println(null == unavaialbemTkt);
+        //         entrancePanel.getParkingTicket(new MotorBike("ka01ee4455"));
+        // System.out.println(null == unavaialbemTkt);
 
-        // Test cast 15 - vacate car
+        // Test cast 12 - vacate car
         parkingTicket = exitPanel.scanAndVacate(parkingTicket);
-        System.out.println(parkingTicket.getCharge());
-        System.out.println(parkingTicket.getCharge() > 0);
+        System.out.println("car charge : "+parkingTicket.getCharge());
+        System.out.println("Is car charge more than 0 : "+ (parkingTicket.getCharge() > 0));
 
-        //Test case 16 - Now should be able to park car
-        System.out.println(ParkingLot.getInstance().canPark(VehicleType.CAR));
+        //Test case 13 - Now should be able to park car
+        System.out.println("Can car be parked > "+ParkingLot.getInstance().canPark(VehicleType.CAR));
 
-        //Test case 18 - check for slots count
-        System.out.println(ParkingLot.getInstance().getParkingFloors()
+        //Test case 14 - check for slots count
+        System.out.println("Free sots : "+ParkingLot.getInstance().getParkingFloors()
                 .get(0).getParkingSpots().get(ParkingSpotType.CAR).size());
 
         //Test case 19 - Payment
         Payment payment = new Payment(UUID.randomUUID().toString(),
                 parkingTicket.getTicketNumber(), parkingTicket.getCharge());
         payment.makePayment();
-        System.out.println(payment.getPaymentStatus());
+        System.out.println("Payment status : "+payment.getPaymentStatus());
 
     }
 }
