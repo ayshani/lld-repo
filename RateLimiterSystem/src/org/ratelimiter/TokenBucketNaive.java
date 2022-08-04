@@ -1,17 +1,17 @@
 package org.ratelimiter;
 
-public class TokenBucket extends RateLimiter{
+public class TokenBucketNaive extends RateLimiter{
 
     private int possibleTokens;
     private long lastRequestTimestamp;
-    public TokenBucket(int maxToken) {
+    public TokenBucketNaive(int maxToken) {
         super(maxToken);
         this.possibleTokens = 0;
         this.lastRequestTimestamp =  System.currentTimeMillis();
     }
 
     @Override
-    public boolean allowRequest() {
+    synchronized public boolean allowRequest() {
         // once a request comes, refill the token bucket first.
         // lazy token filling.
         refillTokens();
