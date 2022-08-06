@@ -4,6 +4,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+//https://hechao.li/2018/06/25/Rate-Limiter-Part1/
+
 public class SlidingWindowCounter extends RateLimiter{
 
     private final ConcurrentMap<Long, AtomicInteger> windows ;
