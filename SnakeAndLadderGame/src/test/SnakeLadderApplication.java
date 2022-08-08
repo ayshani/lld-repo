@@ -5,6 +5,9 @@ import org.game.SnakeAndLadderGame;
 
 import java.util.Scanner;
 
+/*
+https://github.com/gopalbala/snake-and-ladder/blob/master/src/main/java/com/gb/snakeladder/SnakeLadderApplication.java
+ */
 public class SnakeLadderApplication {
 
     public static void main(String[] args) {
