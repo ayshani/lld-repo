@@ -30,7 +30,7 @@ public class TokenBucketNaive extends RateLimiter{
         Assuming as of now, 1 token/sec is getting added
         We can add one reffil rate later
          */
-        possibleTokens += ((now-lastRequestTimestamp)/1000)* this.MAX_TOKEN;
+        possibleTokens += ((now-lastRequestTimestamp)/1000);
 
         possibleTokens = Math.min(possibleTokens,this.MAX_TOKEN);
 
