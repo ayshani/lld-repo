@@ -2,8 +2,7 @@ package org.game;
 
 import lombok.Getter;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.*;
 
 @Getter
 public class SnakeAndLadderGame {
@@ -12,6 +11,8 @@ public class SnakeAndLadderGame {
     private Board board;
     private Dice dice;
 
+    private List<Player> listOfWinners;
+
     public SnakeAndLadderGame(int boardSize, int numberOfSnakes, int numberOfLadders){
         // Initialize board, dice and playerQueue
         board = new Board(boardSize);
@@ -19,6 +20,7 @@ public class SnakeAndLadderGame {
         // current value has no meaning though
         dice = new Dice(1,6,2);
         this.players = new ArrayDeque<>();
+        this.listOfWinners = new LinkedList<>();
     }
 
     public void addPlayer(String name){
@@ -42,10 +44,11 @@ public class SnakeAndLadderGame {
                 player.setCurrentPosition(this.board.getNewPositionAfterGoingThroughSnakesAndLadders(newPositionOfPlayer));
                 if(player.getCurrentPosition()== this.board.getEnd()){
                     player.setWon(true);
-                    System.out.println("Player " + player.getName() + "has wont he Game");
+                    System.out.println("Player " + player.getName() + " has won the Game");
+                    this.listOfWinners.add(player);
                 } else{
                     System.out.println("Setting Player " + player.getName() + "'s new Position "+ player.getCurrentPosition());
-                    players.offer(player);
+                    players.offer(player); // Back in queue for next turn
                 }
             }
         }

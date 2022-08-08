@@ -66,17 +66,17 @@ public class Board {
     }
 
     public int getNewPositionAfterGoingThroughSnakesAndLadders(int currentPosition){
-            for(Snake snake : snakes){
+            for(Snake snake : this.getSnakes()){
                 if(snake.getHead()==currentPosition)
                 {
-                    System.out.println("snake bit");
+                    System.out.println("Snake bites at "+ snake.getHead());
                     return snake.getTail();
                 }
             }
 
-            for(Ladder ladder : ladders){
+            for(Ladder ladder : this.getLadders()){
                 if(ladder.getStart()==currentPosition){
-                    System.out.println("Climbed Ladder");
+                    System.out.println("Climbed Ladder at "+ ladder.getStart());
                     return ladder.getEnd();
                 }
             }
