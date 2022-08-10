@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/ChainOfResponsibility/ChainOfResponsibility.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/ChainOfResponsibility/ChainOfResponsibility.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElevatorSystem/ElevatorSystem.iml" filepath="$PROJECT_DIR$/ElevatorSystem/ElevatorSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Observer/Observer.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Observer/Observer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ParkingLotSystem/ParkingLotSystem.iml" filepath="$PROJECT_DIR$/ParkingLotSystem/ParkingLotSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/RateLimiterSystem/RateLimiterSystem.iml" filepath="$PROJECT_DIR$/RateLimiterSystem/RateLimiterSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/SnakeAndLadderGame/SnakeAndLadderGame.iml" filepath="$PROJECT_DIR$/SnakeAndLadderGame/SnakeAndLadderGame.iml" />
