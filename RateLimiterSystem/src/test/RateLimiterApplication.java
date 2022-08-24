@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RateLimiterApplication {
 
+
     public static void main(String[] args) throws InterruptedException {
         final int MAX_REQUEST_PER_SECOND = 10;
 
