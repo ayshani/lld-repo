@@ -27,6 +27,11 @@ public class ExpenseService {
                 return new PercentExpense(amount,expensePaidBy,splits,expenseName);
             case EQUAL:
                 int totalSplits = splits.size();
+                // multiplying with 100 to take two decimal place consideration
+                // e.g : amount = 20 and totalSplits =3
+                // 20*100 = 2000/3 = 666.6667
+                // Round(666.6667) = 666
+                // 666/100 = 6.66 ( this is the exact split as we need to consider the decimal place to make total amount)
                 double splitAmount = (double) (Math.round(amount*100/totalSplits))/100.0;
                 for(Split split : splits){
                     split.setAmount(splitAmount);
