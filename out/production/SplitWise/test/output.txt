@@ -1,0 +1,71 @@
+EQUAL SPLIT -  USERS BALANCE SHEET
+-------user1-------
+user2 owes user1 : 20.0
+user3 owes user1 : 20.0
+-------user2-------
+user2 owes user1 : 20.0
+-------user3-------
+user3 owes user1 : 20.0
+-------user4-------
+No balance
+
+-----All User Balance sheet -----
+user2 owes user1 : 20.0
+user3 owes user1 : 20.0
+user2 owes user1 : 20.0
+user3 owes user1 : 20.0
+
+EXACT SPLIT -  USERS BALANCE SHEET
+-------user1-------
+user2 owes user1 : 20.0
+user3 owes user1 : 20.0
+-------user2-------
+user2 owes user1 : 20.0
+user2 owes user4 : 20.0
+-------user3-------
+user3 owes user1 : 20.0
+user3 owes user4 : 40.0
+-------user4-------
+user2 owes user4 : 20.0
+user3 owes user4 : 40.0
+
+-----All User Balance sheet -----
+user2 owes user1 : 20.0
+user3 owes user1 : 20.0
+user2 owes user1 : 20.0
+user2 owes user4 : 20.0
+user3 owes user1 : 20.0
+user3 owes user4 : 40.0
+user2 owes user4 : 20.0
+user3 owes user4 : 40.0
+
+
+FINAL USERS BALANCE SHEET
+-------user1-------
+user1 owes user2 : 30.0
+user3 owes user1 : 20.0
+-------user2-------
+user1 owes user2 : 30.0
+user3 owes user2 : 225.0
+user4 owes user2 : 80.0
+-------user3-------
+user3 owes user1 : 20.0
+user3 owes user2 : 225.0
+user3 owes user4 : 40.0
+-------user4-------
+user4 owes user2 : 80.0
+user3 owes user4 : 40.0
+
+-----All User Balance sheet -----
+user1 owes user2 : 30.0
+user3 owes user1 : 20.0
+user1 owes user2 : 30.0
+user3 owes user2 : 225.0
+user4 owes user2 : 80.0
+user3 owes user1 : 20.0
+user3 owes user2 : 225.0
+user3 owes user4 : 40.0
+user4 owes user2 : 80.0
+user3 owes user4 : 40.0
+
+Process finished with exit code 0
