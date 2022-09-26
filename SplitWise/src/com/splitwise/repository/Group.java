@@ -62,8 +62,8 @@ public class Group {
         return balances;
     }
 
-    public List<String> getBalances(){
-        List<String> balances = new ArrayList<>();
+    public Set<String> getBalances(){
+        Set<String> balances = new HashSet<>();
         for(String user: balanceSheet.keySet()){
             balances.addAll(getBalance(user));
         }

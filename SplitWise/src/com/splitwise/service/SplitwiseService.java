@@ -5,6 +5,7 @@ import com.splitwise.model.split.Split;
 import com.splitwise.repository.Group;
 
 import java.util.List;
+import java.util.Set;
 
 public class SplitwiseService {
     Group group;
@@ -31,7 +32,7 @@ public class SplitwiseService {
     }
 
     public void showBalances(){
-        List<String> balances = group.getBalances();
+        Set<String> balances = group.getBalances();
         if(balances.isEmpty()){
             System.out.println("No balance");
         } else{
