@@ -33,4 +33,8 @@ public class User {
     public int getNumberOfVehicles(){
         return this.vehicles.size();
     }
+
+    public void addVehcile(Vehicle vehicle){
+        this.vehicles.add(vehicle);
+    }
 }
