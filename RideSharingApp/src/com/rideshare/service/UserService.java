@@ -5,18 +5,17 @@ import com.rideshare.model.User;
 import com.rideshare.model.Vehicle;
 import com.rideshare.repo.UserRepository;
 import com.rideshare.repo.VehicleRepository;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Optional;
 
 public class UserService {
 
-    private static UserRepository userRepository;
-    private static VehicleRepository vehicleRepository;
-
-    public UserService(){
-        userRepository = new UserRepository();
-        vehicleRepository = new VehicleRepository();
-    }
+    @Getter
+    private static UserRepository userRepository = new UserRepository();
+    @Getter
+    private static VehicleRepository vehicleRepository = new VehicleRepository();
 
     public static User createUser(String name, int age, Gender gender){
         User user = new User(name,gender,age);
