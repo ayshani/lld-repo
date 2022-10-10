@@ -48,7 +48,9 @@ public class RideService {
         List<Ride> specificRides = new ArrayList<>();
 
         for(Ride ride :rideRepository.getAllOffers()){
-            if(!user.getId().equals(ride.getRideGiver().getId()) && ride.getOrigin().equals(origin) && ride.getDestination().equals(destination)){
+            if(!user.getId().equals(ride.getRideGiver().getId()) && ride.getOrigin().equals(origin)
+                    && ride.getDestination().equals(destination) && ride.getAvailableSeats()>0){
+
                 specificRides.add(ride);
             }
         }
@@ -67,7 +69,7 @@ public class RideService {
                 Collections.sort(specificRides,new FastestRide());
                 return specificRides.get(0);
             case "Earliest_Ride" :
-                Collections.sort(specificRides,new EarliestRide());
+                specificRides.sort(new EarliestRide());
                 return specificRides.get(0);
             default:
                 return null;
@@ -91,14 +93,9 @@ public class RideService {
 
         ride.setAvailableSeats(ride.getAvailableSeats()-1);
         user.setRidesTaken(user.getRidesTaken()+1);
-        if(rideRepository.getAllRidesTaken().containsKey(user)){
-            List<Ride> rideByUser = rideRepository.getAllRidesTaken().get(user);
-            rideByUser.add(ride);
-        } else{
-            List<Ride> rideByUser = new ArrayList<>();
-            rideByUser.add(ride);
-            rideRepository.getAllRidesTaken().put(user,rideByUser);
-        }
+
+        rideRepository.getAllRidesTaken().putIfAbsent(user, new ArrayList<>());
+        rideRepository.getAllRidesTaken().get(user).add(ride);
 
         System.out.println("Ride given by "+ ride.getRideGiver().getName() + " With vehicle "
                 + ride.getRideVehicle().getRegistrationNumber() + " to " + user.getName());
