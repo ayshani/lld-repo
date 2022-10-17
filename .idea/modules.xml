@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" filepath="$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" />
       <module fileurl="file://$PROJECT_DIR$/CacheApplication/CacheApplication.iml" filepath="$PROJECT_DIR$/CacheApplication/CacheApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/ChainOfResponsibility/ChainOfResponsibility.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/ChainOfResponsibility/ChainOfResponsibility.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
