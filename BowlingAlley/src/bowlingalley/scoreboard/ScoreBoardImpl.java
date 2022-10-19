@@ -1,13 +1,48 @@
 package bowlingalley.scoreboard;
 
-public class ScoreBoardImpl extends ScoreBoard{
-    @Override
-    void roll(Integer noofPins) {
+import bowlingalley.constant.AppConstant;
+import bowlingalley.factory.BonusFactory;
+import bowlingalley.model.Bonus;
+import lombok.Getter;
 
+@Getter
+public class ScoreBoardImpl extends ScoreBoard{
+
+    private final int[] rolls;
+    private Integer currentRoll =0;
+    public ScoreBoardImpl() {
+        this.rolls = new int[AppConstant.MAX_ROLLS];
+    }
+
+    @Override
+    void roll(Integer noofPinsDown) {
+        rolls[currentRoll++] = noofPinsDown;
     }
 
     @Override
     Integer score() {
-        return null;
+        int totalScore =0;
+        int set =0;
+        for(int i =0; i< AppConstant.TOTAL_SETS;i++){
+            if(isStrike(set)){
+                totalScore+= AppConstant.TOTAL_PINS + BonusFactory.getStrategy(Bonus.STRIKE).bonus();
+            } else if(isSpare(set))
+            {
+                totalScore+= AppConstant.TOTAL_PINS + BonusFactory.getStrategy(Bonus.SPARE).bonus();
+            } else{
+                totalScore+= rolls[set] + rolls[set+1];
+            }
+            set+=2;
+        }
+
+        return totalScore + rolls[set];// rolls[set] : 21st chance
+    }
+
+    private boolean isSpare(int set) {
+        return rolls[set] + rolls[set+1] ==10;
+    }
+
+    private boolean isStrike(int set) {
+        return 10 == rolls[set] ;
     }
 }
