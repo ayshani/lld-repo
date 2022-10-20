@@ -2,6 +2,10 @@ package bowlingalley.scoreboard;
 
 public abstract class ScoreBoard {
 
-    abstract void roll(Integer noofPins);
-    abstract Integer score();
+    public abstract void roll(Integer noofPins);
+    public abstract Integer score();
+
+    public abstract boolean isEligibleForLastBonus();
+
+    public abstract boolean isLastRound();
 }

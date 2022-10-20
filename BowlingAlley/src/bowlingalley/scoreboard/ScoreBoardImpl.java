@@ -15,12 +15,15 @@ public class ScoreBoardImpl extends ScoreBoard{
     }
 
     @Override
-    void roll(Integer noofPinsDown) {
-        rolls[currentRoll++] = noofPinsDown;
+    public void roll(Integer noofPinsDown) {
+        if(currentRoll== AppConstant.MAX_ROLLS-1)
+            rolls[currentRoll] = noofPinsDown;
+        else
+            rolls[currentRoll++] = noofPinsDown;
     }
 
     @Override
-    Integer score() {
+    public Integer score() {
         int totalScore =0;
         int set =0;
         for(int i =0; i< AppConstant.TOTAL_SETS;i++){
@@ -36,6 +39,16 @@ public class ScoreBoardImpl extends ScoreBoard{
         }
 
         return totalScore + rolls[set];// rolls[set] : 21st chance
+    }
+
+    @Override
+    public boolean isEligibleForLastBonus() {
+        return rolls[currentRoll-1] + rolls[currentRoll-2] == 10;
+    }
+
+    @Override
+    public boolean isLastRound() {
+        return currentRoll == AppConstant.MAX_ROLLS-1;
     }
 
     private boolean isSpare(int set) {

@@ -27,7 +27,7 @@ public class Player {
         return "Player{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", scoreBoard=" + scoreBoard +
+                ", score =" + scoreBoard.score() +
                 ", won=" + won +
                 '}';
     }
