@@ -34,6 +34,5 @@ public class BowlingAlleyGame {
     }
 
     private boolean isEligibleForExtraBall(Player player) {
-
     }
 }
