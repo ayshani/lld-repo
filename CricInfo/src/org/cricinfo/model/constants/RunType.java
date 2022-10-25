@@ -1,6 +1,7 @@
 package org.cricinfo.model.constants;
 
 public enum RunType {
+    ZERO,
     ONE,
     TWO,
     THREE,
