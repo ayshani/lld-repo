@@ -2,6 +2,7 @@ package org.cricinfo.model.match;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.cricinfo.model.person.PlayingMembers;
 
 @Getter
 @Setter
