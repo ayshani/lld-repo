@@ -5,6 +5,7 @@ import lombok.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 public class Topic {
@@ -15,9 +16,9 @@ public class Topic {
     private final List<TopicSubscriber> topicSubscribers;
 
 
-    public Topic(@NonNull String topicName, @NonNull String topicId) {
+    public Topic(@NonNull String topicName) {
         this.topicName = topicName;
-        this.topicId = topicId;
+        this.topicId = UUID.randomUUID().toString();
         this.messages = new ArrayList<>();
         this.topicSubscribers = new ArrayList<>();
     }

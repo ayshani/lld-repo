@@ -16,12 +16,13 @@ public class Queue {
     }
 
     public Topic createTopic(@NonNull final String topicName){
-        final Topic topic = new Topic(topicName, UUID.randomUUID().toString());
+        final Topic topic = new Topic(topicName);
         TopicHandler topicHandler = new TopicHandler(topic);
         topicProcessors.put(topic.getTopicId(), topicHandler);
         System.out.println("Created Topic : "+ topic.getTopicName());
         return topic;
     }
 
-    //public void sub
+    public void sub
+
 }
