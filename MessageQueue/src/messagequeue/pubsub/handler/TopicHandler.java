@@ -23,7 +23,7 @@ public class TopicHandler {
         }
     }
 
-    private void startSubscriberWorker(TopicSubscriber topicSubscriber) {
+    public void startSubscriberWorker(TopicSubscriber topicSubscriber) {
         final String subscriberId = topicSubscriber.getSubscriber().getId();
 
         if(!subscriberWorkers.containsKey(subscriberId)){

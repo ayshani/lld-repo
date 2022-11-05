@@ -17,23 +17,29 @@ public class SubscriberWorker implements Runnable{
         this.topicSubscriber = topicSubscriber;
     }
 
-    @SneakyThrows // sneaky throw concept allows us to throw any checked exception without defining it explicitly in the method signature.
-    @Override
-    public void run() {
-        synchronized (topicSubscriber){
-            do{
-                int currentOffSet = topicSubscriber.getOffset().get();
-                while(currentOffSet >= topic.getMessages().size()){
-                    topicSubscriber.wait();
-                }
-                Message message = topic.getMessages().get(currentOffSet);
-                topicSubscriber.getSubscriber().consume(message);
+    // sneaky throw concept allows us to throw any checked exception without defining it explicitly in the method signature.
 
-                // We cannot just increment here since subscriber offset can be reset while it is consuming.
-                // Reset can happen from Queue which changes the offset.
-                // So, after consuming we need to increase only if it was previous one.
-                topicSubscriber.getOffset().compareAndSet(currentOffSet,currentOffSet+1);
-            } while (true);
+    //@SneakyThrows
+    @Override
+    public void run(){
+        try {
+            synchronized (topicSubscriber) {
+                do {
+                    int currentOffSet = topicSubscriber.getOffset().get();
+                    while (currentOffSet >= topic.getMessages().size()) {
+                        topicSubscriber.wait();
+                    }
+                    Message message = topic.getMessages().get(currentOffSet);
+                    topicSubscriber.getSubscriber().consume(message);
+
+                    // We cannot just increment here since subscriber offset can be reset while it is consuming.
+                    // Reset can happen from Queue which changes the offset.
+                    // So, after consuming we need to increase only if it was previous one.
+                    topicSubscriber.getOffset().compareAndSet(currentOffSet, currentOffSet + 1);
+                } while (true);
+            }
+        } catch(Exception e){
+
         }
     }
 

@@ -1,0 +1,49 @@
+Problem statement
+-----------------
+
+Message Queue
+We have to design a message queue supporting publisher-subscriber model. It should support following operations:
+
+It should support multiple topics where messages can be published.
+Publisher should be able to publish a message to a particular topic.
+Subscribers should be able to subscribe to a topic.
+Whenever a message is published to a topic, all the subscribers, who are subscribed to that topic, should receive the message.
+Subscribers should be able to run in parallel
+
+
+https://github.com/anomaly2104/low-level-design-messaging-queue-pub-sub/blob/main/src/main/java/com/uditagarwal/Main.java
+
+Output
+---------
+
+Created Topic : Topic1
+Created Topic : Topic2
+subscriber1 subscribed to topic : Topic1
+subscriber2 subscribed to topic : Topic1
+subscriber3 subscribed to topic : Topic2
+Message1 published to topic : Topic1
+Message2 published to topic : Topic1
+Message3 published to topic : Topic2
+Subscriber subscriber1 started consuming message : Message1
+Subscriber subscriber3 started consuming message : Message3
+Subscriber subscriber2 started consuming message : Message1
+Subscriber subscriber3 done consuming message : Message3
+Subscriber subscriber1 done consuming message : Message1
+Subscriber subscriber1 started consuming message : Message2
+Message4 published to topic : Topic2
+Message5 published to topic : Topic1
+Subscriber subscriber3 started consuming message : Message4
+subscriber1 offset set to : 0
+Subscriber subscriber2 done consuming message : Message1
+Subscriber subscriber2 started consuming message : Message2
+Subscriber subscriber1 done consuming message : Message2
+Subscriber subscriber3 done consuming message : Message4
+Subscriber subscriber1 started consuming message : Message1
+Subscriber subscriber1 done consuming message : Message1
+Subscriber subscriber1 started consuming message : Message2
+Subscriber subscriber2 done consuming message : Message2
+Subscriber subscriber2 started consuming message : Message5
+Subscriber subscriber1 done consuming message : Message2
+Subscriber subscriber1 started consuming message : Message5
+Subscriber subscriber1 done consuming message : Message5
+Subscriber subscriber2 done consuming message : Message5
