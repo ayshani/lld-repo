@@ -1,6 +1,7 @@
 package com.stackoverflow.model;
 
 import lombok.Getter;
+import lombok.ToString;
 
 /*
 Tag:
@@ -13,5 +14,12 @@ public class Tag {
 
     public Tag(String text) {
         this.text = text;
+    }
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "text='" + text + '\'' +
+                '}';
     }
 }

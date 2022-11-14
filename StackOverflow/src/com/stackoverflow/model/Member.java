@@ -2,6 +2,7 @@ package com.stackoverflow.model;
 
 import com.stackoverflow.common.AccountStatus;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.util.UUID;
 
@@ -13,6 +14,7 @@ The account of the member can be in any of these states: ACTIVE, CLOSED, CANCELE
 A member can earn reputation by giving high quality answers to open questions.
 In addition a moderator can close a question, and an admin can close a question, and block or unblock a member.
  */
+
 @Getter
 public class Member {
 
@@ -96,5 +98,19 @@ public class Member {
     // satisfies the question asker and the question asker gives the answerer the bounty
     public void receiveBounty(int bountyReputation) {
         this.reputation += bountyReputation;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id='" + id + '\'' +
+                ", accountStatus=" + accountStatus +
+                ", name='" + name + '\'' +
+                ", displayName='" + displayName + '\'' +
+                ", email='" + email + '\'' +
+                ", reputation=" + reputation +
+                ", isModerator=" + isModerator +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }

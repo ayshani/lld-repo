@@ -2,6 +2,7 @@ package com.stackoverflow.model;
 
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.ToString;
 
 import java.util.UUID;
 
@@ -34,5 +35,15 @@ public class Photo {
             return this.id.equals(((Photo) that).id);
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Photo{" +
+                "id='" + id + '\'' +
+                ", photoPath='" + photoPath + '\'' +
+                ", creationDate=" + creationDate +
+                ", creatingMember=" + creatingMember +
+                '}';
     }
 }

@@ -2,6 +2,7 @@ package com.stackoverflow.model;
 
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,5 +49,17 @@ public class Answer extends Entity{
 
     public void receiveBounty(int reputation){
         creater.receiveBounty(reputation);
+    }
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "solvedProblem=" + solvedProblem +
+                ", comments=" + comments +
+                ", text='" + text + '\'' +
+                ", creationDateTime=" + creationDateTime +
+                ", creater=" + creater +
+                ", photos=" + photos +
+                '}';
     }
 }

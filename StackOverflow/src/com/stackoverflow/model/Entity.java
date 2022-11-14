@@ -4,6 +4,7 @@ import com.stackoverflow.common.Status;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,6 +16,7 @@ import java.util.Set;
 // without specifying if this is a question, answer or comment.
 // No Setter is being used. few methods exposed to update attributes.
 // Mandatory methods are passed via constructor
+
 @Getter
 public abstract class Entity {
 
@@ -62,7 +64,10 @@ public abstract class Entity {
         if (membersWhoUpVotedThisEntity.add(memberId)) {
             // if the member has downvoted this comment in past then upvoting it once just
             // cancels the downvote
+            System.out.println("Member ID : "+memberId +" up voting Question ID : "+ this.getId());
             membersWhoDownVotedThisEntity.remove(memberId);
+        } else{
+            System.out.println("Member ID : "+memberId +" already up voted Question ID : "+ this.getId());
         }
     }
 
@@ -71,7 +76,10 @@ public abstract class Entity {
         if (membersWhoDownVotedThisEntity.add(memberId)) {
             // if the member has upvoted this comment in past then downvoting it once just
             // cancels the upvote
+            System.out.println("Member ID : "+memberId +" down voting voting Question ID : "+ this.getId());
             membersWhoUpVotedThisEntity.remove(memberId);
+        } else{
+            System.out.println("Member ID : "+memberId +" already down voted voted Question ID : "+ this.getId());
         }
     }
 
@@ -99,4 +107,19 @@ public abstract class Entity {
         this.status = Status.DELETED;
     }
 
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "id='" + id + '\'' +
+                ", text='" + text + '\'' +
+                ", creationDateTime=" + creationDateTime +
+                ", lastUpdated=" + lastUpdated +
+                ", creater=" + creater +
+                ", photos=" + photos +
+                ", membersWhoDownVotedThisEntity=" + membersWhoDownVotedThisEntity +
+                ", membersWhoUpVotedThisEntity=" + membersWhoUpVotedThisEntity +
+                ", numberOfUsersReportedThisEntity=" + numberOfUsersReportedThisEntity +
+                ", status=" + status +
+                '}';
+    }
 }
