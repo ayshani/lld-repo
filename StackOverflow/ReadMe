@@ -1,0 +1,257 @@
+Problem Statement
+---------------------
+//https://www.lowleveldesign.io/OOD/StackOverflow
+
+Problem Statement:
+Design Stack Overflow using object-oriented principles.
+
+If you haven't used Stack Overflow before, I highly recommend that you visit https://stackoverflow.com/
+and play around to become familiar with its core features. Click here for wiki.
+
+Solution:
+
+
+Object Oriented Analysis:
+Just like how in real world software engineering project the first stage of the software development lifecycle (SDLC)
+is to gather software requirements from the business analyse the requirements, in a design interview your first task is
+to have a conversation with your interviewer to gather the requirements he/she has in mind. The interviewer would
+intentionally keep the problem statement vague to see if you are someone who jumps on implementing something,
+making a lot of assumptions on your own and not clarifying the requirements. To key to success in object oriented
+design or low level design interview, as well as in your software engineering career, is to ask a lot of clarifying
+questions, have critical thinking ability and analytical skills.
+
+Remember that, even though your interviewer might have something very specific for you to design in his/her mind,
+the onus is on you to come up with different relevant features for the system once you have gotten a hint on what
+your interviewer wants you to design. You need to ask questions, come up with various features of the system,
+and then validate them with your interviewer to know if your interviewer is okay with the system having
+those features or not.
+
+Coming up with various features is not always straightforward. But we would be using the below methodology that
+would help us figuring different features in a very systematic way:
+
+Step #1: Actors: Think about all the actors involved. Figure out all the different types of actors involved
+and all the different types of users who will be using the system.
+Step #2. User Activities and Use Cases: For each type of actors, you need to think through the different
+features that they would be interested in using, and different activities that they would be doing.
+Step #3. Entities: Determine different core components that will be working together in sync with other to
+make the system, as a whole, functional. Entities are often non-living things.
+The Actors and Entities become Classes that we would need to design. The user activities and use cases become
+the methods or properties.
+
+So in short, what the above frameworks asks us to do is: start with getting an overall high-level sense of the
+system you are going to design. Using the information you have so far, start figuring out all user types, and
+then for each user type figure out all the relevant user activities. Analysing all the user activities will
+give you all the entities and components that are needed for the system to function.
+Remember to ask your interviewer clarifying questions at all steps to accomplish your goal. An integral part
+of design interviews is to showcase how good you are at requirements gathering and requirements analysis.
+
+
+
+Actors:
+We have four main actors involved in our system:
+Unregistered Users: Anyone can search and view questions. You do not need to be a registered users to do these operations.
+Registered Users: Registered Members can perform all activities that guests can, in addition to which
+they can add/remove questions, answers, and comments. Members can delete and un-delete their questions, answers or comments.
+Moderators: In addition to all the activities that registered users can perform, moderators can close any question.
+Admins: In addition to all the activities that registered users can perform, an admins can block or unblock members.
+
+
+Activities involved and Use Cases:
+Any non-member (guest) can search and view questions. However, to add or upvote a question, they have to become a member.
+Members should be able to post new questions.
+Members should be able to add an answer to an open question.
+Members can add comments to any question or answer.
+A member can upvote a question, answer or comment.
+Members can flag (i.e, report as spam or abuse or off-topic) a question, answer or comment,
+    for serious problems or moderator attention.
+Any member can add a bounty to their question to draw attention.
+Moderators and admins can close or reopen any question.
+Members can add tags to their questions. A tag is a word or phrase that describes the topic of the question.
+Moderators and admins can close a question.
+Admins can block (ban) or unblock a member if the member's behavior id deemed non-compliant to the community rules.
+Remember that during a design interview the onus is on you to be creative and come up with relevant use cases
+    and user activities for the system that you are designing, and getting them validated by the interviewer
+    before you go ahead and write code.
+
+Entities:
+Here are the main classes of Stack Overflow System:
+Question: This class is the central part of our system. It has attributes like Title and Description to define
+    the question. In addition to this, we will track the number of times a question has been viewed or voted on.
+    We should also track the status of a question, as well as closing remarks if the question is closed.
+Answer: The most important attributes of any answer will be the text and the view count. In addition to that,
+    we will also track the number of times an answer is voted on or flagged. We should also track if the question
+    owner has accepted an answer.
+Comment: Similar to answer, comments will have text, and view, vote, and flag counts. Members can add comments to
+    questions and answers.
+Tag: Tags will be identified by their names and will have a field for a description to define them.
+    We will also track daily and weekly frequencies at which tags are associated with questions.
+Photo: Questions or answers can have photos.
+Bounty: Each member, while asking a question, can place a bounty to draw attention.
+    Bounties will have a total reputation and an expiry date.
+Account: We will have four types of accounts in the system, guest, member, admin, and moderator.
+    Guests can search and view questions. Members can ask questions and earn reputation by answering
+    questions and from bounties.
+
+
+Object Oriented Design and Low Level Implementation:
+
+Question:
+We would start our Object Oriented Design with designing the Question class.
+Let's think about what are the properties associated with Questions in Stack Overflow.
+
+Questions will have a mandatory title and text. Questions can optionally have one or more photos.
+Questions will have a creation date and the time when it was last edited by the question asker.
+A Question has a creator or question asker.
+Members can answer a Question.
+Members can also put comments to a Question.
+A Question can be upvoted or downvoted.
+A very interesting edge case to consider is that a user can try to upvote or downvote a question multiple times,
+    but we need to make sure that a member cannot upvote a question that he/she has already upvoted.
+    A user should also not be able to downvote a question that he/she has already downvoted.
+If a downvote is performed followed by an upvote, or an upvote is performed followed by a downvote
+    then the upvote and downvote cancel each other.
+A Question can be reported if a member thinks it is a spam or an abuse to the system.
+Question Asker or an Admin can delete a Question.
+If a satisfactory solution has been found, a Question can be closed.
+If the Question Asker is in urgent need to get solution to his Question, he/she can add Bounty to
+    his/her Question to get extra attention. A bounty is a special reputation award given to answers.
+    It is funded by the personal reputation of the user who offers it, and is non-refundable.
+Question asker can optionally associate a Question with one or more tags.
+Before we jump on to the class implementation of Question class, let's take a look at the Answer and Comment classes.
+
+Answer:
+Answer entity will have below properties:
+Answer entity has a creator who wrote the answer.
+Answer will have some text.
+Answer will be associated with creation date time indicating when it was created,
+    and it should also have last updated date time indicating if the member editted the answer and when.
+Answer entity can optinally have photos.
+Members can upvote or downvote an Answer.
+The creator can delete an Answer.
+An Answer can be marked as a solution to a question if the Answer satisfied the asker of the question to
+    which this Answer is associated to.
+People can also comment on an Answer to give their own opinion on that answer.
+People can report a comment for abuse or spam.
+If an answer satisfies the question asker and gets a bounty, then the creator of the answer gets the bounty.
+
+
+Comment:
+Comment entity has a creator who wrote the answer.
+Comment will have some text.
+Comment will be associated with creation date time indicating when it was created, and it should also have
+    last updated date time indicating if the member editted the comment and when.
+Comment entity can optinally have photos.
+Members can upvote or downvote an Comment.
+The creator can delete a Comment.
+People can report a comment for abuse or spam.
+
+
+Did you observe anything interesting about Question entity, Comment entity and Answer entity ?
+They all have the following properties in common:
+They all have associated creators.
+They all have associated creation date time and last updated date time.
+They all have some associated text.
+They all can have optional photos.
+Members can upvote or downvote them.
+They can be deleted by creator and/or Admin. Admin can also reinstate an entity deleted by them.
+
+
+We would create an abstract class with all these common properties and then Question,
+Answer and Comment will inherit the abstract class. Please try to learn by heart how we are using
+Object oriented principles like inheritance in our design. This is super critical.
+
+Photo:
+A Photo will have:
+an id
+path to where the photo is stored
+creation time
+member who created it.
+
+Bounty:
+Properties of Bounty:
+Bounty specifies how much reputation a member is going to get if his/her answer satisfies the question asker.
+Bounty has an expiration date.
+Question Asker can modify the reputation associated with the Bounty.
+
+Tag:
+A Tag only has a text associated with it.
+
+Member:
+A Member has following properties:
+Member has a Member ID, Name, Display Name or Username, and Email.
+The account of the member can be in any of these states: ACTIVE, CLOSED, CANCELED, BLACKLISTED, BLOCKED
+A member can earn reputation by giving high quality answers to open questions.
+In addition a moderator can close a question, and an admin can close a question, and block or unblock a member.
+
+NOTE
+------
+You might be thinking why we did not create Admin class and Moderator class which could inherit Member class
+since a moderator or admin posseses all the properties of a member ? The answer to that is, doing that would not
+have been a very good design decision, since being Admin or Moderator is not a permanent status.
+A member can be a moderator or admin for a certain time period and not necessarily for th entire time span of his/
+her membership. So it only makes sense to keep "being moderator or/and admin" as a property of a member.
+
+
+OUTPUT
+------------
+Question
+{title='Question 1', status=OPEN, bounty=Bounty{reputation=500, expirationDate=1668654352502},
+tags=[Art, Psychology], comments=[Comment{text='Can you be more more descriptive',
+creater=Member{id='4bfc9d11-aff4-47d0-b752-1e8d21e8e164', accountStatus=ACTIVE, name='Commentor',
+displayName='Commentor', email='commentor@gmail.com', reputation=0, isModerator=false, isAdmin=false},
+photos=[]}], answers=[], text='Explain what is question 1', creationDateTime=1668654252503, lastUpdated=1668654252503,
+creater=Member{id='d0a48fb4-ca72-42a5-b840-44e01c4a69e9', accountStatus=ACTIVE, name='QuestionAsker',
+displayName='QuestionAsker', email='questionAsker@gmail.com', reputation=0, isModerator=false, isAdmin=false},
+membersWhoDownVotedThisEntity=[], membersWhoUpVotedThisEntity=[]}
+
+
+Member ID : ccbc9dc4-1e48-41a1-8282-c444c3075f29 up voting Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d
+Member ID : ebb07611-b9cd-4f74-8c7b-ecff0d426cd3 up voting Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d
+Members who upvoted Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d are as below :
+[ccbc9dc4-1e48-41a1-8282-c444c3075f29, ebb07611-b9cd-4f74-8c7b-ecff0d426cd3]
+
+Member ID : ccbc9dc4-1e48-41a1-8282-c444c3075f29 already up voted Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d
+Members who upvoted Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d are as below :
+[ccbc9dc4-1e48-41a1-8282-c444c3075f29, ebb07611-b9cd-4f74-8c7b-ecff0d426cd3]
+
+Member ID : 07fc451e-6585-4986-a45e-3e2e7245d39c down voting voting Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d
+Member ID : ebb07611-b9cd-4f74-8c7b-ecff0d426cd3 down voting voting Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d
+Members who downvoted Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d are as below :
+[ebb07611-b9cd-4f74-8c7b-ecff0d426cd3, 07fc451e-6585-4986-a45e-3e2e7245d39c]
+
+Total Number of Members who reported Question ID : 02cd1a76-09d2-4e8a-bcbf-c4490f5fb35d are : 2
+
+Question{
+title='Question 1', status=OPEN, bounty=Bounty{reputation=500, expirationDate=1668654352502},
+tags=[Art, Psychology], comments=[Comment{text='Can you be more more descriptive',
+creater=Member{id='4bfc9d11-aff4-47d0-b752-1e8d21e8e164', accountStatus=ACTIVE, name='Commentor',
+displayName='Commentor', email='commentor@gmail.com', reputation=0, isModerator=false, isAdmin=false}, photos=[]}],
+answers=[Answer{solvedProblem=false, comments=[], text='this is an answer1 to question',
+creationDateTime=1668654252530, creater=Member{id='e9d6759b-6d2b-4fa1-83db-317142e4bb28',
+accountStatus=ACTIVE, name='Respondent1', displayName='Respondent1', email='respondent1@gmail.com',
+reputation=0, isModerator=false, isAdmin=false}, photos=[]}, Answer{solvedProblem=true, comments=[],
+text='this is an answer2 to question', creationDateTime=1668654252530,
+creater=Member{id='d70d2233-9f15-46d4-91a9-79eaa79f5a03', accountStatus=ACTIVE, name='Respondent2',
+displayName='Respondent2', email='respondent2@gmail.com', reputation=0, isModerator=false, isAdmin=false},
+photos=[]}], text='Explain what is question 1', creationDateTime=1668654252503, lastUpdated=1668654252503,
+creater=Member{id='d0a48fb4-ca72-42a5-b840-44e01c4a69e9', accountStatus=ACTIVE, name='QuestionAsker',
+displayName='QuestionAsker', email='questionAsker@gmail.com', reputation=0, isModerator=false, isAdmin=false},
+membersWhoDownVotedThisEntity=[ebb07611-b9cd-4f74-8c7b-ecff0d426cd3, 07fc451e-6585-4986-a45e-3e2e7245d39c],
+membersWhoUpVotedThisEntity=[ccbc9dc4-1e48-41a1-8282-c444c3075f29]}
+
+
+Question asker details before giving reputation:
+Member{id='d0a48fb4-ca72-42a5-b840-44e01c4a69e9', accountStatus=ACTIVE, name='QuestionAsker',
+displayName='QuestionAsker', email='questionAsker@gmail.com', reputation=0, isModerator=false, isAdmin=false}
+
+Respondent 2 details before gaining reputation:
+Member{id='d70d2233-9f15-46d4-91a9-79eaa79f5a03', accountStatus=ACTIVE, name='Respondent2',
+displayName='Respondent2', email='respondent2@gmail.com', reputation=0, isModerator=false, isAdmin=false}
+
+Question asker details with decreasing reputation:
+Member{id='d0a48fb4-ca72-42a5-b840-44e01c4a69e9', accountStatus=ACTIVE, name='QuestionAsker',
+displayName='QuestionAsker', email='questionAsker@gmail.com', reputation=500, isModerator=false, isAdmin=false}
+
+Respondent 2 details with gaining reputation:
+Member{id='d70d2233-9f15-46d4-91a9-79eaa79f5a03', accountStatus=ACTIVE, name='Respondent2',
+displayName='Respondent2', email='respondent2@gmail.com', reputation=500, isModerator=false, isAdmin=false}
