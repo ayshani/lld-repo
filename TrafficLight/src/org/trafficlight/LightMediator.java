@@ -1,14 +1,17 @@
 package org.trafficlight;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 public class LightMediator {
 
     private HashSet<Light> lights;
-
+    private Map<Color,Light> lightMap;
     public LightMediator(){
         lights = new HashSet<>();
+        lightMap = new HashMap<>();
     }
 
     /**
@@ -18,6 +21,7 @@ public class LightMediator {
      */
     public void registerLight(Light light){
         lights.add(light);
+        lightMap.put(light.getColor(),light);
     }
 
     /**
@@ -25,16 +29,21 @@ public class LightMediator {
      */
     public void unregisterLight(Light light){
         lights.remove(light);
+        lightMap.remove(light.getColor(),light);
     }
 
     public void turnOffAllOtherLights(Light currentLight){
-        for(Light light : lights){
+
+        for(Light light: lightMap.values()){
             if(!light.equals(currentLight)){
                 System.out.println("Turning off Light :"+ light.getColor());
                 light.turnOFF();
             }
         }
+    }
 
+    public void turnONLight(Color color){
+        turnONLight(lightMap.get(color));
     }
 
     public void turnONLight(Light light){

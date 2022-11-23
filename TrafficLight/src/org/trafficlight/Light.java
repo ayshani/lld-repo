@@ -6,10 +6,18 @@ import lombok.Getter;
 public class Light {
     private Color color;
     private State currentState;
+    private int timeDuration;
 
     public Light(Color color){
         this.color = color;
         this.currentState = State.OFF;
+        this.timeDuration = 0;
+    }
+
+    public Light(Color color, int timeDuration){
+        this.color = color;
+        this.currentState = State.OFF;
+        this.timeDuration = timeDuration;
     }
 
     public void turnON(){
