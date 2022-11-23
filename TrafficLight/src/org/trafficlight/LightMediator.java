@@ -6,11 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class LightMediator {
-
-    private HashSet<Light> lights;
     private Map<Color,Light> lightMap;
     public LightMediator(){
-        lights = new HashSet<>();
         lightMap = new HashMap<>();
     }
 
@@ -20,7 +17,6 @@ public class LightMediator {
      * We can also explicitly call this method.
      */
     public void registerLight(Light light){
-        lights.add(light);
         lightMap.put(light.getColor(),light);
     }
 
@@ -28,7 +24,6 @@ public class LightMediator {
      * unregisters light from LightMediator
      */
     public void unregisterLight(Light light){
-        lights.remove(light);
         lightMap.remove(light.getColor(),light);
     }
 
