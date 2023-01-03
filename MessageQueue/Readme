@@ -11,7 +11,7 @@ Whenever a message is published to a topic, all the subscribers, who are subscri
 Subscribers should be able to run in parallel
 
 
-https://github.com/anomaly2104/low-level-design-messaging-queue-pub-sub/blob/main/src/main/java/com/uditagarwal/Main.java
+https://github.com/anomaly2104/low-level-design-messaging-queue-pub-sub/blob/main/src/main/java/com/uditagarwal/~~Main.java
 
 Output
 ---------

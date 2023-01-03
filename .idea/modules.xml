@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElevatorSystem/ElevatorSystem.iml" filepath="$PROJECT_DIR$/ElevatorSystem/ElevatorSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/LoggingFramework/LoggingFramework.iml" filepath="$PROJECT_DIR$/LoggingFramework/LoggingFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MeetingScheduler/MeetingScheduler.iml" filepath="$PROJECT_DIR$/MeetingScheduler/MeetingScheduler.iml" />
       <module fileurl="file://$PROJECT_DIR$/MessageQueue/MessageQueue.iml" filepath="$PROJECT_DIR$/MessageQueue/MessageQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Observer/Observer.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Observer/Observer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ParkingLotSystem/ParkingLotSystem.iml" filepath="$PROJECT_DIR$/ParkingLotSystem/ParkingLotSystem.iml" />
