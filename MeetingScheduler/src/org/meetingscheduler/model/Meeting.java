@@ -33,4 +33,16 @@ public class Meeting {
         this.host = host;
         this.subJect = subJect;
     }
+
+    public void addAttendees(Attendee attendee){
+        this.attendeeList.add(attendee);
+    }
+
+    public void addAttendees(List<Attendee> attendees){
+        this.attendeeList.addAll(attendees);
+    }
+
+    public void invite(List<Attendee> attendees) {
+
+    }
 }

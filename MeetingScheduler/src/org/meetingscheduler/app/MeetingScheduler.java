@@ -3,6 +3,7 @@ package org.meetingscheduler.app;
 import org.meetingscheduler.model.Interval;
 import org.meetingscheduler.model.Meeting;
 import org.meetingscheduler.model.MeetingRoom;
+import org.meetingscheduler.model.user.Attendee;
 import org.meetingscheduler.model.user.Host;
 
 import java.util.ArrayDeque;
@@ -50,5 +51,27 @@ public class MeetingScheduler {
     }
 
     private void saveToHistory(Meeting newMeeting) {
+        if(historyQueue.size()== MAX_HISTORICAL_MEETING_STORAGE){
+            historyQueue.removeFirst();
+        }
+
+        historyQueue.addLast(newMeeting);
+    }
+
+    public Meeting bookAParticularMeetingRoom(MeetingRoom meetingRoom,Interval interval, String subject, Host host){
+        Meeting meeting = null;
+        if(meetingRoom.isAvailable(interval)){
+            meeting = meetingRoom.scheduleMeeting(subject,host,interval);
+            saveToHistory(meeting);
+        }
+
+        return meeting;
+    }
+
+    public void addAttendeesToMeeting(Meeting meeting, List<Attendee> attendees){
+        if(meeting != null && attendees.size()>0){
+            meeting.addAttendees(attendees);
+            meeting.invite(attendees);
+        }
     }
 }
