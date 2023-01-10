@@ -5,9 +5,7 @@ import lombok.Setter;
 import org.meetingscheduler.model.user.Attendee;
 import org.meetingscheduler.model.user.Host;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Getter
 @Setter
@@ -18,7 +16,7 @@ public class Meeting {
 
     // This particular meeting is for which Room
     private MeetingRoom meetingRoom;
-    private List<Attendee> attendeeList;
+    private Map<Attendee,ResponseStatus> attendeeMap;
 
     // Person who booked the meeting
     private Host host;
@@ -29,20 +27,33 @@ public class Meeting {
         this.meetingId = UUID.randomUUID().toString();
         this.interval = interval;
         this.meetingRoom = meetingRoom;
-        this.attendeeList = new ArrayList<>();
+        this.attendeeMap = new HashMap<>();
         this.host = host;
         this.subJect = subJect;
     }
 
     public void addAttendees(Attendee attendee){
-        this.attendeeList.add(attendee);
+        this.attendeeMap.put(attendee,ResponseStatus.NO_RESPONSE);
     }
 
     public void addAttendees(List<Attendee> attendees){
-        this.attendeeList.addAll(attendees);
+        attendees.forEach(a -> this.attendeeMap.put(a,ResponseStatus.NO_RESPONSE));
     }
 
     public void invite(List<Attendee> attendees) {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Meeting meeting = (Meeting) o;
+        return Objects.equals(meetingId, meeting.meetingId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(meetingId);
     }
 }
