@@ -28,6 +28,7 @@ public class Calendar {
             if(meeting.getInterval().getEndTime().compareTo(interval.getStartTime()) > 0 &&
                meeting.getInterval().getStartTime().compareTo(interval.getEndTime())<0){
 
+                return false;
             }
         }
 

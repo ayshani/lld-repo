@@ -1,0 +1,9 @@
+MeetingScheduler App
+------------------------
+
+Attendee1 is invited to Meeting : First Meeting hosted by Host1
+Attendee3 is invited to Meeting : First Meeting hosted by Host1
+MeetingRoom1 is booked for interval : Wed Jan 11 23:25:06 IST 2023 - Wed Jan 11 23:35:06 IST 2023
+Unable to add attendees to meeting as either Meeting is Invalid or Attendee List is Empty.
+Attendee1's response to Meeting - First Meeting : ACCEPTED
+Attendee1 responded to Meeting - First Meeting : ACCEPTED

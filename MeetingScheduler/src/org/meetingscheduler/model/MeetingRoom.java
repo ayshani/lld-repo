@@ -1,12 +1,16 @@
 package org.meetingscheduler.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.meetingscheduler.model.user.Host;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@AllArgsConstructor
+@Getter
+@Setter
 public class MeetingRoom {
     private String roomName;
 
@@ -14,6 +18,11 @@ public class MeetingRoom {
     private Calendar calendar;
     private List<Interval> bookedIntervals;
 
+    public MeetingRoom(String roomName){
+        this.roomName = roomName;
+        calendar = new Calendar();
+        bookedIntervals = new ArrayList<>();
+    }
     public boolean isAvailable(Interval interval){
         return calendar.checkAvailabilty(this,interval);
     }

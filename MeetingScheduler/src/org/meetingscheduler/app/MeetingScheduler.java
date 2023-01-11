@@ -47,6 +47,11 @@ public class MeetingScheduler {
                 return newMeeting;
             }
         }
+
+        if(null == newMeeting){
+            System.out.println("All Meeting Rooms are booked for interval : "+ interval.getStartTime() + " - "+ interval.getEndTime());
+
+        }
         return newMeeting;
     }
 
@@ -63,6 +68,8 @@ public class MeetingScheduler {
         if(meetingRoom.isAvailable(interval)){
             meeting = meetingRoom.scheduleMeeting(subject,host,interval);
             saveToHistory(meeting);
+        } else{
+            System.out.println(meetingRoom.getRoomName() +" is booked for interval : "+ interval.getStartTime() + " - "+ interval.getEndTime());
         }
 
         return meeting;
@@ -72,6 +79,8 @@ public class MeetingScheduler {
         if(meeting != null && attendees.size()>0){
             meeting.addAttendees(attendees);
             meeting.invite(attendees);
+        } else{
+            System.out.println("Unable to add attendees to meeting as either Meeting is Invalid or Attendee List is Empty.");
         }
     }
 }

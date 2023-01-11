@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.meetingscheduler.model.user.Attendee;
 import org.meetingscheduler.model.user.Host;
+import org.meetingscheduler.service.NotificationService;
 
 import java.util.*;
 
@@ -21,7 +22,7 @@ public class Meeting {
     // Person who booked the meeting
     private Host host;
     private String subJect;
-    private org.meetingscheduler.service.NotificationService NotificationService;
+    private org.meetingscheduler.service.NotificationService notificationService;
 
     public Meeting(Interval interval, MeetingRoom meetingRoom, Host host, String subJect) {
         this.meetingId = UUID.randomUUID().toString();
@@ -30,9 +31,10 @@ public class Meeting {
         this.attendeeMap = new HashMap<>();
         this.host = host;
         this.subJect = subJect;
+        this.notificationService = new NotificationService();
     }
 
-    public void addAttendees(Attendee attendee){
+    public void addAttendee(Attendee attendee){
         this.attendeeMap.put(attendee,ResponseStatus.NO_RESPONSE);
     }
 
@@ -41,7 +43,7 @@ public class Meeting {
     }
 
     public void invite(List<Attendee> attendees) {
-
+        this.notificationService.sendBulkEmails(this,attendees);
     }
 
     @Override
