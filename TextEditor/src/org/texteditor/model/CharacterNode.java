@@ -13,7 +13,7 @@ public class CharacterNode {
     CharacterNode prev;
 
     public CharacterNode(char c){
-        this.ch = ch;
+        this.ch = c;
     }
 
     @Override

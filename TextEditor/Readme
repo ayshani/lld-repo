@@ -1,0 +1,35 @@
+Text Editor
+-------------
+
+Ref - https://github.com/kumaransg/LLD/tree/main/Low_level_Design_Problems/texteditor
+But we improvised the undo method.
+
+
+Output -
+a|
+ab|
+abc|
+abcd|
+abc|
+ab|
+a|
+|
+|
+a|
+ab|
+abc|
+abcd|
+abc|d
+abcd|
+abc|d
+ab|cd
+abc|d
+abcd|
+abcd|
+abc|
+ab|c
+abc|
+abcd|
+abc|d
+ab|cd
+abc|d
