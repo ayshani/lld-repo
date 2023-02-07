@@ -1,0 +1,21 @@
+Vending Machine
+-----------------
+https://www.youtube.com/watch?v=8CcB3xAt9p4
+
+
+output
+-----
+5.0 coin is inserted
+3.0 coin is inserted
+Product with id - 1 is dispensed and your return is Rs. 3.0
+5.0 coin is inserted
+Product with id - 1 is dispensed and your return is Rs. 0.0
+7.0 coin is inserted
+Product with id - 2 is dispensed and your return is Rs. 5.0
+5.0 coin is inserted
+Product with id - 1 is dispensed and your return is Rs. 0.0
+5.0 coin is inserted
+Exception in thread "main" java.lang.IllegalStateException: Product is out of stock
+	at org.vendingmachine.states.CoinInsertedState.pressButton(CoinInsertedState.java:26)
+	at org.vendingmachine.app.VendingMachine.pressButton(VendingMachine.java:49)
+	at VendingMachineDriver.main(VendingMachineDriver.java:35)
