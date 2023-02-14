@@ -24,7 +24,7 @@ public class Booking {
         return this.bookingStatus ==  BookingStatus.CONFIRMED;
     }
 
-    public void confirmBooking() throws InvalidStateException {
+    public void confirmBooking() {
         if(this.bookingStatus != BookingStatus.CREATED){
             throw new InvalidStateException();
         }
