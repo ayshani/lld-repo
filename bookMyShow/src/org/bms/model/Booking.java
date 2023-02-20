@@ -1,9 +1,11 @@
 package org.bms.model;
 
+import lombok.Getter;
 import org.bms.exception.InvalidStateException;
 
 import java.util.List;
 
+@Getter
 public class Booking {
 
     private final String id;
