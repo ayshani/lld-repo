@@ -1,10 +1,12 @@
 package org.bms.model;
 
+import lombok.Getter;
 import lombok.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Screen {
 
     private final String id;
