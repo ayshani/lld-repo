@@ -21,15 +21,15 @@ public class SeatAvailabilityService {
         final List<Seat> allSeats = show.getScreen().getSeats();
         List<Seat> allBookedAndLockedSeats = getAllBookedAndLockedSeats(show);
 
-        List<Seat> availableSeats = new ArrayList<>(allSeats);
-        availableSeats.removeAll(allBookedAndLockedSeats);
-        return availableSeats;
+
+        allSeats.removeAll(allBookedAndLockedSeats);
+        return allSeats;
     }
 
     private List<Seat> getAllBookedAndLockedSeats(Show show) {
         List<Seat> unavailableSeats = bookingService.getBookedSeats(show);
         unavailableSeats.addAll(seatLockProvider.getLockedSeats(show));
-        return unavailableSeats;
+        return unavailableSeats;// We need to return booked and locked seats
     }
 
 

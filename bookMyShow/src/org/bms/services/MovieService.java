@@ -1,5 +1,7 @@
 package org.bms.services;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NonNull;
 import org.bms.exception.NotFoundException;
 import org.bms.model.Movie;
@@ -8,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@Getter
 public class MovieService {
     private final Map<String, Movie> movies;
 

@@ -57,7 +57,7 @@ public class TheatreService {
         return screens.get(screenId);
     }
 
-    public Seat getSetas(final String seatId){
+    public Seat getSeat(final String seatId){
         if(!seats.containsKey(seatId)){
             throw new NotFoundException();
         }
