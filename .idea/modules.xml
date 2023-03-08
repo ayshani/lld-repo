@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/SnakeAndLadderGame/SnakeAndLadderGame.iml" filepath="$PROJECT_DIR$/SnakeAndLadderGame/SnakeAndLadderGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/SplitWise/SplitWise.iml" filepath="$PROJECT_DIR$/SplitWise/SplitWise.iml" />
       <module fileurl="file://$PROJECT_DIR$/StackOverflow/StackOverflow.iml" filepath="$PROJECT_DIR$/StackOverflow/StackOverflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/State/State.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/State/State.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Strategy/Strategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Structural/Structural.iml" filepath="$PROJECT_DIR$/DesignPattern/Structural/Structural.iml" />
       <module fileurl="file://$PROJECT_DIR$/TextEditor/TextEditor.iml" filepath="$PROJECT_DIR$/TextEditor/TextEditor.iml" />
