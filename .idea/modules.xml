@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/AbstractFactory/AbstractFactory.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/AbstractFactory/AbstractFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" />
       <module fileurl="file://$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" filepath="$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/Builder/Builder.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/Builder/Builder.iml" />
@@ -11,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/CricInfo/CricInfo.iml" filepath="$PROJECT_DIR$/CricInfo/CricInfo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/ElevatorSystem/ElevatorSystem.iml" filepath="$PROJECT_DIR$/ElevatorSystem/ElevatorSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/Factory/Factory.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/Factory/Factory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/FactoryMethod/FactoryMethod.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/FactoryMethod/FactoryMethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/LoggingFramework/LoggingFramework.iml" filepath="$PROJECT_DIR$/LoggingFramework/LoggingFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/MeetingScheduler/MeetingScheduler.iml" filepath="$PROJECT_DIR$/MeetingScheduler/MeetingScheduler.iml" />
       <module fileurl="file://$PROJECT_DIR$/MessageQueue/MessageQueue.iml" filepath="$PROJECT_DIR$/MessageQueue/MessageQueue.iml" />
