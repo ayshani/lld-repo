@@ -11,7 +11,9 @@ public class AbstractFactoryMain {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
+        // Asus Factory
         Company asus = new AsusManufacturer();
+        // Msi Factory
         Company msi = new MsiManufacturer();
 
         List.of(msi.createGpu(), msi.createMonitor(),asus.createGpu(),asus.createMonitor())
