@@ -1,19 +1,19 @@
-package org.decorator;
+package org.decorator.notification;
 
 // This is one of the concrete Notifier class
-public class MessageNotifier implements INotifier{
+public class EmailNotifier implements INotifier{
 
     private final String username;
     private final DBService dbService;
 
-    public MessageNotifier(String username){
+    public EmailNotifier(String username){
         this.username=username;
         this.dbService = new DBService();
     }
     @Override
     public void send(String message) {
-        String phoneBy = dbService.getPhoneNumberFromUsername(username);
-        System.out.println("Sending "+ message +" by Message to  "+ phoneBy);
+        String mailBy = dbService.getMailFromUsername(username);
+        System.out.println("Sending "+ message +"by Mail to  "+ mailBy);
     }
 
     @Override

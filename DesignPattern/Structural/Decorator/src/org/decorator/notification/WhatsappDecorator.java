@@ -1,4 +1,4 @@
-package org.decorator;
+package org.decorator.notification;
 
 public class WhatsappDecorator extends BaseNotifierDecorator{
     public WhatsappDecorator(INotifier wapped) {

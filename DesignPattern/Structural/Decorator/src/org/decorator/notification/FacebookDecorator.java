@@ -1,4 +1,4 @@
-package org.decorator;
+package org.decorator.notification;
 
 public class FacebookDecorator extends BaseNotifierDecorator{
     public FacebookDecorator(INotifier wapped) {
