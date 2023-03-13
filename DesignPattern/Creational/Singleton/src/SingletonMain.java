@@ -10,6 +10,5 @@ public class SingletonMain {
         Singleton singleton =  Singleton.getInstance("singleton");
 
         System.out.println(singleton.getData());
-
     }
 }
