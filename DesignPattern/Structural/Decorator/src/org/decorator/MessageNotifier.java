@@ -12,8 +12,8 @@ public class MessageNotifier implements INotifier{
     }
     @Override
     public void send(String message) {
-        String mail = dbService.getPhoneNumberFromUsername(username);
-        System.out.println("Sending "+ message +" by Message to  "+ username);
+        String phoneBy = dbService.getPhoneNumberFromUsername(username);
+        System.out.println("Sending "+ message +" by Message to  "+ phoneBy);
     }
 
     @Override

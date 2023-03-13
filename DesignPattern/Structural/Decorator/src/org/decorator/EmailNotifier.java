@@ -12,8 +12,8 @@ public class EmailNotifier implements INotifier{
     }
     @Override
     public void send(String message) {
-        String mail = dbService.getMailFromUsername(username);
-        System.out.println("Sending "+ message +"by Mail to  "+ username);
+        String mailBy = dbService.getMailFromUsername(username);
+        System.out.println("Sending "+ message +"by Mail to  "+ mailBy);
     }
 
     @Override

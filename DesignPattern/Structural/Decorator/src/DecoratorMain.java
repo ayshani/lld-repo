@@ -14,5 +14,10 @@ public class DecoratorMain {
         INotifier notifyByMessage = new FacebookDecorator(new MessageNotifier("Old Geek"));
         notifyByMessage.send("Follow for more");
 
+        System.out.println("==========================================");
+
+        INotifier notifyByWhatsappMessage = new WhatsappDecorator(new MessageNotifier("Ayshani"));
+        notifyByWhatsappMessage.send("Here it goes");
+
     }
 }

@@ -1,5 +1,6 @@
 package org.decorator;
 
+// This is decorator Base class which gets used by Facebook and Whatsapp Decorator
 public  abstract class BaseNotifierDecorator implements INotifier{
 
     private final INotifier wrapped;
