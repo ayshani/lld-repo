@@ -14,6 +14,7 @@ public class CommandMain {
         controlPanel.setCommand(0,switchOnCommand);
         controlPanel.setCommand(1,switchOffCommand);
 
+
         //System.out.println("Is Light On : "+ light.isSwitchedOn());
         controlPanel.switchOn();
         System.out.println("Is Light On : "+ light.isSwitchedOn());
