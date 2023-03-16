@@ -10,3 +10,5 @@ bugs. So we should avoid touching the tested and reliable (mostly) production co
 
 But how are we going to add new functionality without touching the class, you may ask. It is usually done with the
 help of interfaces and abstract classes.
+
+https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/

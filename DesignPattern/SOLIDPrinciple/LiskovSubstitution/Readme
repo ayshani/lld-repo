@@ -10,3 +10,6 @@ This is the expected behavior, because when we use inheritance we assume that th
 that the superclass has. The child class extends the behavior but never narrows it down.
 
 Therefore, when a class does not obey this principle, it leads to some nasty bugs that are hard to detect.
+
+https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
+https://medium.com/mindorks/solid-principles-explained-with-examples-79d1ce114ace
