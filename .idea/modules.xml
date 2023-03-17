@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ATM/ATM.iml" filepath="$PROJECT_DIR$/ATM/ATM.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/AbstractFactory/AbstractFactory.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/AbstractFactory/AbstractFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Structural/Adapter/Adapter.iml" filepath="$PROJECT_DIR$/DesignPattern/Structural/Adapter/Adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" />
