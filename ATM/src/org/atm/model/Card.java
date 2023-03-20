@@ -11,6 +11,7 @@ public class Card {
     private final int PIN;
     private BankAccount bankAccount;
 
+
     public Card(int cardNumber, int cvv, Date expiryDate, String holderName, int PIN, BankAccount bankAccount) {
         this.cardNumber = cardNumber;
         this.cvv = cvv;

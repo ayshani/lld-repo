@@ -28,7 +28,7 @@ public class ATM {
         return ATMInstance;
     }
 
-    public ATMState getATMState() {
+    public ATMState getCurrentATMState() {
         return ATMState;
     }
 

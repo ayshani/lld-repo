@@ -12,7 +12,7 @@ public class BankAccount {
     }
 
     public void withdraw(int amount){
-        System.out.println("Withdrawing : updating bank account ");
+        System.out.println("Withdrawing amount: "+amount+ " updating bank account ");
         balance = balance-amount;
     }
 
