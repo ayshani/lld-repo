@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" filepath="$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/Builder/Builder.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/Builder/Builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/CacheApplication/CacheApplication.iml" filepath="$PROJECT_DIR$/CacheApplication/CacheApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarRental/CarRental.iml" filepath="$PROJECT_DIR$/CarRental/CarRental.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/ChainOfResponsibility/ChainOfResponsibility.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/ChainOfResponsibility/ChainOfResponsibility.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Command/Command.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Command/Command.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/Creational.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/Creational.iml" />
