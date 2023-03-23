@@ -59,17 +59,6 @@ public class Store {
         vehicleReservation.updateReservationStatus(ReservationStatus.CANCELLED); // cancel reservation
         vehicleReservation.getVehicle().setVehicleStatus(VehicleStatus.AVAILABLE); // make vehicle available
     }
-    public List<VehicleReservation> getReservation(User user ){
-        return this.userService.findReservationsByUser(user);
-    }
-
-    public void addVehicleToStore(Vehicle vehicle){
-        this.vehicleInventoryService.addVehicle(vehicle);
-    }
-
-    public List<Vehicle> getAllAvailableVehicles(){
-       return this.vehicleInventoryService.getAvailableVehicles();
-    }
 
     public void startTrip(String reservationId){
         VehicleReservation vehicleReservation =  reservationMap.getOrDefault(reservationId,null);
@@ -85,6 +74,19 @@ public class Store {
             updateReservationAndVehicleStatus(vehicleReservation, ReservationStatus.COMPLETED, VehicleStatus.AVAILABLE);
         }
     }
+    public List<VehicleReservation> getReservation(User user ){
+        return this.userService.findReservationsByUser(user);
+    }
+
+    public void addVehicleToStore(Vehicle vehicle){
+        this.vehicleInventoryService.addVehicle(vehicle);
+    }
+
+    public List<Vehicle> getAllAvailableVehicles(){
+       return this.vehicleInventoryService.getAvailableVehicles();
+    }
+
+
 
     private void updateReservationAndVehicleStatus(VehicleReservation vehicleReservation, ReservationStatus reservationStatus, VehicleStatus vehicleStatus) {
         vehicleReservation.updateReservationStatus(reservationStatus);
