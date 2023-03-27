@@ -13,8 +13,6 @@ public class Bill {
         this.vehicleReservation = vehicleReservation;
         this.paymentTimeStamp = new Date();
     }
-
-
     public double calculateAmount(){
         // TODO
         return 100.0;
