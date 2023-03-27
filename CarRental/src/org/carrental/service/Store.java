@@ -1,5 +1,6 @@
 package org.carrental.service;
 
+import lombok.Getter;
 import org.carrental.exception.NoAvilableVehicles;
 import org.carrental.model.Location;
 import org.carrental.model.User;
@@ -10,9 +11,8 @@ import org.carrental.util.VehicleStatus;
 
 import java.util.*;
 
+@Getter
 public class Store {
-
-
 
     private VehicleInventoryService vehicleInventoryService;
     private UserService userService;
@@ -31,6 +31,7 @@ public class Store {
         this.storeId = UUID.randomUUID().toString();
         this.vehicleInventoryService = new VehicleInventoryService();
         this.userService = userService;
+        this.location = location;
     }
 
     public VehicleReservation reserveVehicle(User user, Vehicle vehicle , Date startDate, Date endDate, String pickUpLocation, String returnLocation){
@@ -85,9 +86,6 @@ public class Store {
     public List<Vehicle> getAllAvailableVehicles(){
        return this.vehicleInventoryService.getAvailableVehicles();
     }
-
-
-
     private void updateReservationAndVehicleStatus(VehicleReservation vehicleReservation, ReservationStatus reservationStatus, VehicleStatus vehicleStatus) {
         vehicleReservation.updateReservationStatus(reservationStatus);
         vehicleReservation.getVehicle().setVehicleStatus(vehicleStatus);

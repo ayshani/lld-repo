@@ -2,9 +2,9 @@ package org.carrental.model;
 
 public class Location {
 
-    private String addres;
+    private String address;
 
-    public Location(String addres) {
-        this.addres = addres;
+    public Location(String address) {
+        this.address = address;
     }
 }
