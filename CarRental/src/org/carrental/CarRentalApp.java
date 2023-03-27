@@ -1,5 +1,6 @@
 package org.carrental;
 
+import org.carrental.model.Bill;
 import org.carrental.model.Location;
 import org.carrental.model.User;
 import org.carrental.model.VehicleReservation;
@@ -34,9 +35,10 @@ public class CarRentalApp {
     }
 
     //handling store
-    public void addStore(Location location){
+    public Store addStore(Location location){
         Store store = new Store(location,userService);
         stores.put(store.getStoreId(),store);
+        return store;
     }
 
     public Store getStoreById(String storeId){
@@ -51,9 +53,9 @@ public class CarRentalApp {
         return store.reserveVehicle(user,startDate,endDate,pickUpLocation,returnLocation);
     }
 
-    public void cancelReservation(String storeId, VehicleReservation vehicleReservation){
+    public void cancelReservation(String storeId, String reservationId){
         Store store = stores.get(storeId);
-        store.cancelReservation(vehicleReservation);
+        store.cancelReservation(reservationId);
     }
 
     public void startTrip(String storeId, String reservationId){
@@ -64,5 +66,10 @@ public class CarRentalApp {
     public void endTrip(String storeId, String reservationId){
         Store store = stores.get(storeId);
         store.endTrip(reservationId);
+    }
+
+    public boolean makePayment(VehicleReservation vehicleReservation){
+        paymentService.setBill(new Bill(vehicleReservation));
+        return paymentService.makePayment();
     }
 }

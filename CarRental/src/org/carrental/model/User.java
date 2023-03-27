@@ -10,7 +10,7 @@ public class User extends Account{
     private String drivingLicenseNumber;
     private Date licenseExpiry;
 
-    public User(String name, String address, String email, int phoneNumber, String password, AccountStatus accountStatus) {
+    public User(String name, String address, String email, int phoneNumber, String password) {
         super(name, address, email, phoneNumber, password, AccountStatus.ACTIVE);
     }
 

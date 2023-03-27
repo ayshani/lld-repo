@@ -2,20 +2,19 @@ package org.carrental.service;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.carrental.model.Payment;
-import org.carrental.util.PaymentMode;
+import org.carrental.model.Bill;
 
 @Getter
 @Setter
 public class PaymentService {
 
-    private Payment payment;
+    private Bill bill;
 
     public PaymentService(){
     }
 
     public boolean makePayment(){
-        System.out.println("Making payment of "+ payment.getAmount() );
+        System.out.println("Making payment of "+ bill.calculateAmount() );
         return true;
     }
 }

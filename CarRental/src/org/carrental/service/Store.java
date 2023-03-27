@@ -56,7 +56,8 @@ public class Store {
         }
     }
 
-    public void cancelReservation(VehicleReservation vehicleReservation){
+    public void cancelReservation(String reservationId){
+        VehicleReservation vehicleReservation =  reservationMap.getOrDefault(reservationId,null);
         vehicleReservation.updateReservationStatus(ReservationStatus.CANCELLED); // cancel reservation
         vehicleReservation.getVehicle().setVehicleStatus(VehicleStatus.AVAILABLE); // make vehicle available
     }
