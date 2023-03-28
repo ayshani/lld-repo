@@ -24,4 +24,12 @@ public abstract class Account extends Person{
 
     public abstract boolean resetPassword(String pass);
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId='" + accountId + '\'' +
+                ", password='" + password + '\'' +
+                ", accountStatus=" + accountStatus +
+                "} " + super.toString();
+    }
 }

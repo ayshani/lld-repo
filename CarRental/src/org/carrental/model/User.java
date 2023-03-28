@@ -10,8 +10,11 @@ public class User extends Account{
     private String drivingLicenseNumber;
     private Date licenseExpiry;
 
-    public User(String name, String address, String email, int phoneNumber, String password) {
+    public User(String name, String address, String email, int phoneNumber, String password, String drivingLicense,
+                Date licenseExpiry) {
         super(name, address, email, phoneNumber, password, AccountStatus.ACTIVE);
+        this.drivingLicenseNumber = drivingLicense;
+        this.licenseExpiry = licenseExpiry;
     }
 
 
@@ -21,4 +24,12 @@ public class User extends Account{
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "drivingLicenseNumber='" + drivingLicenseNumber + '\'' +
+                ", licenseExpiry=" + licenseExpiry +
+                ", accountStatus=" + accountStatus +
+                "} " + super.toString();
+    }
 }

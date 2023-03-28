@@ -32,6 +32,7 @@ public class Store {
         this.vehicleInventoryService = new VehicleInventoryService();
         this.userService = userService;
         this.location = location;
+        this.reservationMap = new HashMap<>();
     }
 
     public VehicleReservation reserveVehicle(User user, Vehicle vehicle , Date startDate, Date endDate, String pickUpLocation, String returnLocation){
@@ -47,7 +48,7 @@ public class Store {
     public VehicleReservation reserveVehicle(User user , Date startDate, Date endDate, String pickUpLocation, String returnLocation){
         List<Vehicle>  availableVehicles = getAllAvailableVehicles();
         VehicleReservation vehicleReservation = null;
-        if(null != availableVehicles) {
+        if(null != availableVehicles && !availableVehicles.isEmpty()) {
             Vehicle reservedVehicle = availableVehicles.get(0);
             vehicleReservation = reserveVehicle(user,reservedVehicle,startDate,endDate,pickUpLocation,returnLocation);
             return vehicleReservation;
@@ -92,4 +93,11 @@ public class Store {
         vehicleReservation.getVehicle().setVehicleStatus(vehicleStatus);
     }
 
+    @Override
+    public String toString() {
+        return "Store{" +
+                "storeId='" + storeId + '\'' +
+                ", location=" + location +
+                '}';
+    }
 }
