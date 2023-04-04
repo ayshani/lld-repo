@@ -21,6 +21,8 @@ public class OneHundredWithdrawProcessor extends CashWithdrawProcessor{
             System.out.println("Unable to dispatch.. Not enough Notes are available");
             throw new RuntimeException("Not enough notes");
         }
-
+        if(required !=0) {
+            System.out.println("Dispatching required notes : " + required + " of 100 denominations");
+        }
     }
 }

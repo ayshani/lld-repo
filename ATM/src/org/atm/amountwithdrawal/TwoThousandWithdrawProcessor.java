@@ -22,6 +22,9 @@ public class TwoThousandWithdrawProcessor extends CashWithdrawProcessor{
             balance += (required-ATMInstance.getNoOfTwoThousandNotes())*2000;
             ATMInstance.deductTwoThousandNotes(ATMInstance.getNoOfTwoThousandNotes());
         }
+        if(required !=0) {
+            System.out.println("Dispatching required notes : " + required + " of 2000 denominations");
+        }
         if(balance!=0){
             nextCashWithdrawProcessor.withdraw(ATMInstance,balance);
         }
