@@ -8,6 +8,7 @@ import org.carrental.model.VehicleReservation;
 import org.carrental.service.Store;
 import org.carrental.util.VehicleType;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 //https://github.com/kumaransg/LLD/blob/main/Low_level_Problem_set_2/cabBooking2/Driver.java
@@ -45,19 +46,20 @@ public class CarRentalMain {
         VehicleReservation vehicleReservationByA =
                 carRentalApp.reserveVehicle(storeA.getStoreId(),
                                             user1.getAccountId(),
-                                            new Date(),new Date(), "Barasat","NewTown");
+                        LocalDateTime.now(),LocalDateTime.now().plusDays(5), "Barasat","NewTown");
 
         carRentalApp.makePayment(vehicleReservationByA);
 
         VehicleReservation vehicleReservationByB=
                 carRentalApp.reserveVehicle(storeA.getStoreId(),
                         user1.getAccountId(),
-                        new Date(),new Date(), "Kolkata","Hyd");
+                        LocalDateTime.now(),LocalDateTime.now().plusDays(5).plusHours(4), "Kolkata","Hyd");
 
+        carRentalApp.makePayment(vehicleReservationByB);
         VehicleReservation vehicleReservationByC =
                 carRentalApp.reserveVehicle(storeA.getStoreId(),
                         user2.getAccountId(),
-                        new Date(),new Date(), "Barasat","NewTown");
+                        LocalDateTime.now(),LocalDateTime.now().plusDays(6).plusHours(6), "Barasat","NewTown");
 
         carRentalApp.makePayment(vehicleReservationByC);
 
@@ -77,14 +79,14 @@ public class CarRentalMain {
         VehicleReservation vehicleReservationByD =
                 carRentalApp.reserveVehicle(storeA.getStoreId(),
                         user2.getAccountId(),
-                        new Date(),new Date(), "Kolkata","Hyd");
+                        LocalDateTime.now(),LocalDateTime.now().plusDays(10).plusHours(2), "Kolkata","Hyd");
 
         carRentalApp.makePayment(vehicleReservationByD);
     }
 
     // To Do
-    // Calculate Amount - Hourly , Daily
-    // Proper print message in make Payment
+    // Calculate Amount - Hourly , Daily -- done
+    // Proper print message in make Payment -- done
 
     // Next Backlog To Do
     // ATM - Proper Prints - Mainly in Dispatch

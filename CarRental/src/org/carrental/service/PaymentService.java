@@ -14,7 +14,7 @@ public class PaymentService {
     }
 
     public boolean makePayment(){
-        System.out.println("Making payment of "+ bill.calculateAmount() );
+        System.out.println("Rs. "+ bill.calculateAmount() );
         return true;
     }
 }

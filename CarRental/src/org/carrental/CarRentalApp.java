@@ -8,6 +8,7 @@ import org.carrental.service.PaymentService;
 import org.carrental.service.Store;
 import org.carrental.service.UserService;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class CarRentalApp {
@@ -47,7 +48,7 @@ public class CarRentalApp {
 
 
     // reservation methods
-    public VehicleReservation reserveVehicle(String storeId, String userId,  Date startDate, Date endDate, String pickUpLocation, String returnLocation){
+    public VehicleReservation reserveVehicle(String storeId, String userId, LocalDateTime startDate, LocalDateTime endDate, String pickUpLocation, String returnLocation){
         Store store = stores.get(storeId);
         User user =  findUserById(userId);
         return store.reserveVehicle(user,startDate,endDate,pickUpLocation,returnLocation);
@@ -69,6 +70,9 @@ public class CarRentalApp {
     }
 
     public boolean makePayment(VehicleReservation vehicleReservation){
+        System.out.println("Making payment of vehicle :" + vehicleReservation.getVehicle().getVehicleID() +" \nhaving hourly cost : "+
+                vehicleReservation.getVehicle().getHourlyRentalCost() +" and Daily Cost : "+ vehicleReservation.getVehicle().getDailyRentalCost()+
+                " for duration from "+ vehicleReservation.getStartDate() +" to "+ vehicleReservation.getEndDate() +" as :::");
         paymentService.setBill(new Bill(vehicleReservation));
         return paymentService.makePayment();
     }

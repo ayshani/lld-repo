@@ -9,6 +9,7 @@ import org.carrental.model.VehicleReservation;
 import org.carrental.util.ReservationStatus;
 import org.carrental.util.VehicleStatus;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Getter
@@ -35,7 +36,7 @@ public class Store {
         this.reservationMap = new HashMap<>();
     }
 
-    public VehicleReservation reserveVehicle(User user, Vehicle vehicle , Date startDate, Date endDate, String pickUpLocation, String returnLocation){
+    public VehicleReservation reserveVehicle(User user, Vehicle vehicle , LocalDateTime startDate, LocalDateTime endDate, String pickUpLocation, String returnLocation){
 
             VehicleReservation vehicleReservation = new VehicleReservation(vehicle,user,startDate,endDate,new Date(),pickUpLocation,returnLocation);
             vehicle.setVehicleStatus(VehicleStatus.RESERVED);
@@ -45,7 +46,7 @@ public class Store {
             return vehicleReservation;
 
     }
-    public VehicleReservation reserveVehicle(User user , Date startDate, Date endDate, String pickUpLocation, String returnLocation){
+    public VehicleReservation reserveVehicle(User user , LocalDateTime startDate, LocalDateTime endDate, String pickUpLocation, String returnLocation){
         List<Vehicle>  availableVehicles = getAllAvailableVehicles();
         VehicleReservation vehicleReservation = null;
         if(null != availableVehicles && !availableVehicles.isEmpty()) {

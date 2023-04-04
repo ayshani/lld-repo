@@ -2,6 +2,7 @@ package org.carrental.model;
 
 import lombok.Getter;
 
+import java.time.Duration;
 import java.util.Date;
 
 @Getter
@@ -15,6 +16,14 @@ public class Bill {
     }
     public double calculateAmount(){
         // TODO
-        return 100.0;
+        Duration duration = Duration.between(this.vehicleReservation.getStartDate(),this.vehicleReservation.getEndDate());
+        long days = duration.toDays();
+        long hours = duration.toHours();
+
+        long leftHours =  hours -days*24;
+
+        double totalAmount = (days * this.vehicleReservation.getVehicle().getDailyRentalCost() )
+                            + (leftHours * this.vehicleReservation.getVehicle().getHourlyRentalCost());
+        return totalAmount;
     }
 }

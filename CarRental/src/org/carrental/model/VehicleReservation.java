@@ -3,6 +3,7 @@ package org.carrental.model;
 import lombok.Getter;
 import org.carrental.util.ReservationStatus;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
@@ -12,8 +13,8 @@ public class VehicleReservation {
     private Vehicle vehicle;
     private User user;
     private ReservationStatus reservationStatus;
-    private Date startDate;
-    private Date endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private Date dateOfReservation;
     private String pickUpLocation;
     private String returnLocation;
@@ -24,7 +25,7 @@ public class VehicleReservation {
     // private List<Service> services; Services(DriverService, RoadsideAssistance, WiFi) can be included
 
 
-    public VehicleReservation(Vehicle vehicle, User user, Date startDate, Date endDate, Date dateOfReservation, String pickUpLocation, String returnLocation) {
+    public VehicleReservation(Vehicle vehicle, User user, LocalDateTime startDate, LocalDateTime endDate, Date dateOfReservation, String pickUpLocation, String returnLocation) {
         this.reservationId = UUID.randomUUID().toString();
         this.vehicle = vehicle;
         this.user = user;

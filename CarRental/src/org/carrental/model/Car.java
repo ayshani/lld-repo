@@ -9,4 +9,17 @@ public class Car extends Vehicle{
         super(licenseNumber, VehicleType.CAR, dailyRentalCost,
                 hourlyRentalCost, passengerCapacity);
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "vehicleID='" + vehicleID + '\'' +
+                ", licenseNumber=" + licenseNumber +
+                ", vehicleType=" + vehicleType +
+                ", dailyRentalCost=" + dailyRentalCost +
+                ", hourlyRentalCost=" + hourlyRentalCost +
+                ", passengerCapacity=" + passengerCapacity +
+                ", vehicleStatus=" + vehicleStatus +
+                "} " + super.toString();
+    }
 }
