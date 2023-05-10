@@ -26,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/MeetingScheduler/MeetingScheduler.iml" filepath="$PROJECT_DIR$/MeetingScheduler/MeetingScheduler.iml" />
       <module fileurl="file://$PROJECT_DIR$/MessageQueue/MessageQueue.iml" filepath="$PROJECT_DIR$/MessageQueue/MessageQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Observer/Observer.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Observer/Observer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineFoodOrderingSystem/OnlineFoodOrderingSystem.iml" filepath="$PROJECT_DIR$/OnlineFoodOrderingSystem/OnlineFoodOrderingSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/SOLIDPrinciple/OpenClosedPrinciple/OpenClosedPrinciple.iml" filepath="$PROJECT_DIR$/DesignPattern/SOLIDPrinciple/OpenClosedPrinciple/OpenClosedPrinciple.iml" />
       <module fileurl="file://$PROJECT_DIR$/ParkingLotSystem/ParkingLotSystem.iml" filepath="$PROJECT_DIR$/ParkingLotSystem/ParkingLotSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Structural/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/DesignPattern/Structural/Proxy/Proxy.iml" />
@@ -44,6 +45,7 @@
       <module fileurl="file://$PROJECT_DIR$/ThreadPool/ThreadPool.iml" filepath="$PROJECT_DIR$/ThreadPool/ThreadPool.iml" />
       <module fileurl="file://$PROJECT_DIR$/TrafficLight/TrafficLight.iml" filepath="$PROJECT_DIR$/TrafficLight/TrafficLight.iml" />
       <module fileurl="file://$PROJECT_DIR$/VendingMachine/VendingMachine.iml" filepath="$PROJECT_DIR$/VendingMachine/VendingMachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineFoodOrderingSystem/Zomato/Zomato.iml" filepath="$PROJECT_DIR$/OnlineFoodOrderingSystem/Zomato/Zomato.iml" />
       <module fileurl="file://$PROJECT_DIR$/bookMyShow/bookMyShow.iml" filepath="$PROJECT_DIR$/bookMyShow/bookMyShow.iml" />
       <module fileurl="file://$PROJECT_DIR$/lld-repo.iml" filepath="$PROJECT_DIR$/lld-repo.iml" />
     </modules>

@@ -1,0 +1,91 @@
+Zomato/ Swiggy/ Online Food Delivery System
+----------------------------------------------
+FR :
+-----
+Customer
+Choose location.
+Landing page
+Search by restaurant, dish
+Place order
+Do payment - supporting only online
+
+Manager
+Add Restaurant
+Add dishes to restaurant
+
+Delivery Boy
+Search delivery boy
+Assign order
+Post delivery action
+
+Admin
+Add users
+Show real time delivery(out of scope)
+Analytics
+Recommendation of Dish / restaurant.
+
+NFR :
+------
+Real time delivery
+Scalability
+Consistent
+Availability (good to have)
+Fault tolerence
+
+API Design :
+-----------------
+addRestaurant(String restaurantName)
+addItem(Item, restaurantId)
+addUsers(UserName, userType, email)
+addAddress(User, address)
+chooseLocation(location, Street, City, pinCode, country)
+searchByDish(String dishName)
+searchByRestaurant(String restaurantName)
+addToCart(Item)
+removeFromCart(Item)
+generateBill(CurrentCart)
+makePayment(String BillId)
+generateOrder(List Items)
+searchDeliveryBoyNearBy(long latitude, long longitude)
+assignDeliveryBoy(DeliveryBoy, orderId)
+deliverFood(DeliveryBoy, orderId, CustomerLocation)
+markDeliveryCompleted(DeliveryBoy, orderId)
+giveRatingToDeliveryBoy(DeliveryBoy, orderId) - out of scope
+giveRatingToFood( orderId) - out of scope
+
+
+
+
+Table :
+----------
+Restaurants_repo
+—————-
+Restaurant_Id ,  Restaurant_Name, latitude, longitude, open_Time, close_Time, status
+
+Items_repo
+—————
+Item_Id, Item_Name, Item_price, Restaurant_Id, status, timeToCook
+
+Users_repo
+—————-
+User_id, User_name, user_type, user_phone_number, user_email, status
+
+Addresses_repo
+————————
+Address_Id, user_id, address_details,  latitude, longitude
+
+Cart_repo
+——————-
+Cart_id, customer_id, restaurant_Id, cart_price
+
+Orders_repo
+——————-
+Order_Id, Cart_id, restaurant_Id, order_price, customer_id , deliverBoy_id, eta, status
+
+Bill_repo
+—————-
+Bill_id, Cart_id, price
+
+Payment_repo
+————————
+payment_id, Bill_id, price, status
