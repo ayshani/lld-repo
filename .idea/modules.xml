@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/AbstractFactory/AbstractFactory.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/AbstractFactory/AbstractFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Structural/Adapter/Adapter.iml" filepath="$PROJECT_DIR$/DesignPattern/Structural/Adapter/Adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" filepath="$PROJECT_DIR$/DesignPattern/Behavioral/Behavioral.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlackJack/BlackJack.iml" filepath="$PROJECT_DIR$/BlackJack/BlackJack.iml" />
       <module fileurl="file://$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" filepath="$PROJECT_DIR$/BowlingAlley/BowlingAlley.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/Creational/Builder/Builder.iml" filepath="$PROJECT_DIR$/DesignPattern/Creational/Builder/Builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/CacheApplication/CacheApplication.iml" filepath="$PROJECT_DIR$/CacheApplication/CacheApplication.iml" />

@@ -13,19 +13,19 @@ public class FancyUIServiceAdapter implements IMultiRestApp{
     }
     @Override
     public void displayMenu(XmlData xmlData) {
-        JsonData jsonData = convertToXML(xmlData);
+        JsonData jsonData = convertToJSON(xmlData);
         System.out.println("Preparing Fancy menus using converted JSON Data Adapter....");
         fancyUIService.displayMenu(jsonData);
     }
 
-    private JsonData convertToXML(XmlData xmlData) {
+    private JsonData convertToJSON(XmlData xmlData) {
         System.out.println("Converting XML to JSON....");
         return new JsonData();
     }
 
     @Override
     public void displayRecommendations(XmlData xmlData) {
-        JsonData jsonData = convertToXML(xmlData);
+        JsonData jsonData = convertToJSON(xmlData);
         System.out.println("Preparing Fancy Recommendation using converted JSON Data Adapter....");
         fancyUIService.displayRecommendations(jsonData);
     }

@@ -35,5 +35,6 @@ public class ShoppingCart {
     public void pay(){
         int totalAmount = calculateTotal();
         this.paymentService.pay(totalAmount);
+        items.clear();
     }
 }
