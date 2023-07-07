@@ -17,6 +17,7 @@ public class SlidingWindowCounter extends RateLimiter{
     @Override
     public boolean allowRequest() {
         long currentTime = System.currentTimeMillis();
+
         long currentWindowKey = currentTime/1000;
 
         windows.putIfAbsent(currentWindowKey,new AtomicInteger(0));

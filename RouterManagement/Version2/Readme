@@ -1,0 +1,20 @@
+Router Management App
+-------------------------
+
+This should be written in Java. There is no need for any kind of user interface/test harness for this question.
+A simple set of classes is fine. Also, no need for persistence (db, xml file, etc.) – everything can be done in memory:
+
+
+
+Please provide source code for a set of classes that:
+
+* Manage packets in a router: A packet can contain either management data or user data. A packet can also be either
+large or small (two discrete values).
+
+* Allows packets to be entered into the system (just with a method call -- no need for any type of user interface)
+
+* Allows the highest priority packet to be removed from the system – management data is always higher priority than
+user data. Within a given type (management or user), a large packet is higher priority than a small packet.
+
+All else being equal, packets that have been in the queue longer should be removed before packets that have not
+been waiting as long.
