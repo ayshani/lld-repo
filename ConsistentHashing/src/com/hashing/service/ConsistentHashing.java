@@ -38,6 +38,11 @@ public class ConsistentHashing {
         }
         long hash = hashFunction.generateHash(key);
         if(!ring.containsKey(hash)){
+            /*
+            tailMap(from_Key) method in Java is used to get a part or view of the map whose keys are greater than
+            equal to the from_key in the parameter. Any changes made in one map will reflect the change
+            in the other map.
+             */
             SortedMap<Long,String> tailMap = ring.tailMap(hash);
             hash = tailMap.isEmpty() ? ring.firstKey() : tailMap.firstKey();
         }
