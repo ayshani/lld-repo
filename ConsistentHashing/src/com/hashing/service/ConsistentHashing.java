@@ -5,7 +5,7 @@ import com.hashing.model.HashFunction;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-//https://ishan-aggarwal.medium.com/consistent-hashing-an-overview-and-implementation-in-java-6b47c718558a
+
 public class ConsistentHashing {
 
     private final TreeMap<Long, String> ring;
