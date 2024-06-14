@@ -12,7 +12,8 @@ public class Dealer extends Player{
 
     @Override
     public boolean wantToPlay() {
-        // dealer will keep playing until either he beats the player or goes over.
-        return true;
+        // here is where the dealer's strategy could be elaborated. The simple strategy
+        // is to keep playing as long as the count is lower than 17.
+        return this.getTotalPoints()<17;
     }
 }

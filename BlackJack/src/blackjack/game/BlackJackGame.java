@@ -33,7 +33,7 @@ public class BlackJackGame {
         giveANewCard(dealer);
 
         // let the player play as long as he wants and we are not over
-        while(player.canPlay() && player.wantToPlay() && !gameEnded()){
+        while(player.canPlay() && !gameEnded()){
             giveANewCard(player);
         }
 
@@ -41,7 +41,7 @@ public class BlackJackGame {
         if(!gameEnded()){
             // first, turn the hidden card
             giveCard(dealer,hiddenCard);
-            while(dealer.canPlay() && !gameEnded()){
+            while(dealer.wantToPlay() && dealer.canPlay() && !gameEnded()){
                 giveANewCard(dealer);
             }
         }

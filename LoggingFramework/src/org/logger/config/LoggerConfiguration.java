@@ -43,18 +43,15 @@ public class LoggerConfiguration {
         if(level==null || handlerType==null)
             return;
 
-        logLevelHandlerTypeMap.putIfAbsent(level,new HashSet<>())   ;
-        logLevelHandlerTypeMap.get(level).add(handlerType);
+        logLevelHandlerTypeMap.computeIfAbsent(level,value -> new HashSet<>()).add(handlerType);
     }
 
     public Set<HandlerType> getHandlerTypesByLoglevel(LogLevel logLevel){
         if(logLevel == null)
             return null;
 
-        if(logLevelHandlerTypeMap.containsKey(logLevel))
+        if(!logLevelHandlerTypeMap.containsKey(logLevel))
         {
-            return logLevelHandlerTypeMap.get(logLevel);
-        } else{
             addHandlerTypeToLogLevel(logLevel,HandlerType.FILE);
         }
         return logLevelHandlerTypeMap.get(logLevel);

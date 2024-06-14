@@ -4,7 +4,7 @@ import priorityqueue.PriorityQueueScheduler;
 
 public class JobSchedulerMain {
 
-    private static int POOL_SIZE = 1;
+    private static int POOL_SIZE = 3;
     private static int QUEUE_SIZE = 10;
 
     public static void main(String[] args) {

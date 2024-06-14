@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.PriorityBlockingQueue;
 
-public class Router {
+public class  Router {
 
     private volatile  static Router router;
     private PriorityBlockingQueue<Packet> incomingQueue;
@@ -27,7 +27,7 @@ public class Router {
     private Router(int poolSize, int initialCapacity){
         singleRouterRunningThread = Executors.newSingleThreadExecutor();
         routerScheduler  = Executors.newFixedThreadPool(poolSize);
-        incomingQueue = new PriorityBlockingQueue<Packet>(initialCapacity, new RouterEvictionComparator());
+        incomingQueue = new PriorityBlockingQueue<>(initialCapacity, new RouterEvictionComparator());
     }
 
     public void startRouter(){

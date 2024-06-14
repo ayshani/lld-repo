@@ -10,7 +10,6 @@ import org.logger.model.Message;
 
 import java.time.LocalDateTime;
 import java.util.Set;
-import java.util.logging.LoggingPermission;
 
 public class Logger {
 
@@ -27,10 +26,7 @@ public class Logger {
                 if(instance== null)
                 {
                     instance = new Logger();
-                    return instance;
                 }
-                else
-                    return instance;
             }
         }
         return instance;

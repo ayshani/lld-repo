@@ -32,7 +32,11 @@ public class ParkingLot {
 
     public static ParkingLot getInstance() {
         if(parkingLot==null) {
-            parkingLot = new ParkingLot();
+            synchronized (ParkingLot.class) {
+                if(parkingLot==null) {
+                    parkingLot = new ParkingLot();
+                }
+            }
         }
         return parkingLot;
     }

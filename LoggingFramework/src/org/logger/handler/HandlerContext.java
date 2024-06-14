@@ -26,10 +26,7 @@ public class HandlerContext{
     }
 
     public static Handler getRegisteredHandler(HandlerType handlerType){
-        if(handlerMap.containsKey(handlerType))
-            return handlerMap.get(handlerType);
-
-        return null;
+        return handlerMap.getOrDefault(handlerType, null);
     }
 
 }

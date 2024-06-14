@@ -1,7 +1,5 @@
 package org.liskovsubstitution.animal.after;
 
-import org.liskovsubstitution.animal.before.Animal;
-
 /*
 Now, wherever in our code we were using Animal class object we must be able to replace it
 with the Dog or Cat without exploding our code. What do we mean here is the child class should

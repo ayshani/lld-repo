@@ -10,20 +10,8 @@ public class Job implements Runnable{
         this.jobPriority = jobPriority;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public JobPriority getJobPriority() {
         return jobPriority;
-    }
-
-    public void setJobPriority(JobPriority jobPriority) {
-        this.jobPriority = jobPriority;
     }
 
     @Override

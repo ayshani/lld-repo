@@ -11,9 +11,9 @@ public class ProxyVideoDownloader implements VideoDownloader{
     public Video getVideo(String videoName) {
         if(!videoCache.containsKey(videoName)){
             videoCache.put(videoName,videoDownloader.getVideo(videoName));
+        } else {
+            System.out.println("Retrieving video : " + videoName + " from cache...");
         }
-
-        System.out.println("Retrieving video : "+videoName+" from cache...");
         System.out.println("-----------------");
         return videoCache.get(videoName);
     }

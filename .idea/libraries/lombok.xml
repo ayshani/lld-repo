@@ -2,6 +2,9 @@
   <library name="lombok">
     <CLASSES>
       <root url="jar://$USER_HOME$/Downloads/lombok.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-annotations-2.15.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-core-2.15.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jackson-databind-2.15.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

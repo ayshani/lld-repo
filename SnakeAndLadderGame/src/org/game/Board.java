@@ -33,8 +33,8 @@ public class Board {
                 if(tail>=head)
                     continue;
 
-                String headTailPair = String.valueOf(head+" ")+tail;
-                String tailHeadPair = String.valueOf(tail+" ")+head;
+                String headTailPair = head + " " + tail;
+                String tailHeadPair = tail + " " + head;
                 if(!occupiedPositions.contains(headTailPair) && !occupiedPositions.contains(tailHeadPair)){
                     Snake snake = new Snake(head,tail);
                     this.getSnakes().add(snake);

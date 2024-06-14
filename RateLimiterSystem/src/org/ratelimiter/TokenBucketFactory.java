@@ -23,9 +23,7 @@ public class TokenBucketFactory{
         }
 
         public void initialize(){
-            Thread daemonThread = new Thread(() ->{
-                refill();
-            });
+            Thread daemonThread = new Thread(this::refill);
             daemonThread.setDaemon(true);
             daemonThread.start();
         }

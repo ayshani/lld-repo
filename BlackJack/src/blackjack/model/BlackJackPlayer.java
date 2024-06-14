@@ -13,8 +13,7 @@ public class BlackJackPlayer extends Player{
 
     @Override
     public boolean wantToPlay() {
-        // here is where the player's strategy could be elaborated. The simple strategy
-        // is to keep playing as long as the count is lower than 17.
-        return this.getTotalPoints()<17;
+        // player will keep playing until either he beats the dealer or goes over.
+        return true;
     }
 }

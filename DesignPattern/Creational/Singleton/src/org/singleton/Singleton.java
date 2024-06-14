@@ -8,7 +8,7 @@ package org.singleton;
 // versions 1.4 will not work correctly for double checked locking and you'll need to use another way to
 // create your singletons.
 //
-public class Singleton {
+public class  Singleton {
 
     private volatile static Singleton onlyInstance;
     private final String data;

@@ -14,7 +14,7 @@ public class Packet implements Runnable{
         this.id = id;
         this.dataType = dataType;
         this.packetSizeCategory = packetSizeCategory;
-        this.inBoundAt = 0l;
+        this.inBoundAt = 0L;
     }
 
     public String getId() {
@@ -51,7 +51,7 @@ public class Packet implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("At  time : "+ System.currentTimeMillis() +" : Packet  is getting removed from router  : "+ toString());
+        System.out.println("At  time : "+ System.currentTimeMillis() +" : Packet  is getting removed from router  : "+ this);
 
     }
 

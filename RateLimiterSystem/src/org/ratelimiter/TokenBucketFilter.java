@@ -47,13 +47,11 @@ public class TokenBucketFilter {
         // Generate 12 threads requesting tokens almost all at once.
         for (int i = 0; i < 12; i++) {
 
-            Thread thread = new Thread(new Runnable() {
-                public void run() {
-                    try {
-                        tokenBucketFilter.getToken();
-                    } catch (InterruptedException ie) {
-                        System.out.println("We have a problem");
-                    }
+            Thread thread = new Thread(() -> {
+                try {
+                    tokenBucketFilter.getToken();
+                } catch (InterruptedException ie) {
+                    System.out.println("We have a problem");
                 }
             });
             thread.setName("Thread_" + (i + 1));

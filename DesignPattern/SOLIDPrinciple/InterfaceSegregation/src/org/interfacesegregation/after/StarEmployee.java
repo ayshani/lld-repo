@@ -1,6 +1,6 @@
 package org.interfacesegregation.after;
 
-public class StartEmployee implements ChefInterface,WaiterInterface{
+public class StarEmployee implements ChefInterface,WaiterInterface{
     @Override
     public void cookFood() {
 

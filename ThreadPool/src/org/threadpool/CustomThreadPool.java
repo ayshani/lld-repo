@@ -2,7 +2,6 @@ package org.threadpool;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -11,7 +10,7 @@ public class CustomThreadPool {
 
     private BlockingQueue<Runnable> taskQueue;
     private List<WorkerThread> workerThreads;
-    private List<WorkerThreadRunnable> workerThreadsRunnable;
+    private List<WorkerThreadRunnable> workerThreadsRunnable ;
     private AtomicBoolean isThreadShutDownInitiated;
 
     public CustomThreadPool(int threadPoolSize){

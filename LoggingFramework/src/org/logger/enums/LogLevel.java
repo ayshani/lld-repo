@@ -31,8 +31,8 @@ public enum LogLevel {
 
     public static LogLevel getLevelByName(String levelName){
 
-        Optional<LogLevel> log =Arrays.stream(LogLevel.values()).filter(logLevel -> logLevel.getLogLevel()
-                .equals(levelName)).findFirst();
+        Optional<LogLevel> log =Arrays.stream(LogLevel.values()).filter(logLevel ->
+                logLevel.getLogLevel().equals(levelName)).findFirst();
 
         if(!log.isPresent())
             return null;

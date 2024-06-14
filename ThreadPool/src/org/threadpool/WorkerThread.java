@@ -34,7 +34,6 @@ public class WorkerThread extends Thread{
         return isThreadShutDownInitiated.get();
     }
 
-
     public synchronized void doStop(){
         isThreadShutDownInitiated = new AtomicBoolean(true);
         //break pool thread out of dequeue() call.
